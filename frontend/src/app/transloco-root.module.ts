@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { NgModule } from '@angular/core';
-import { TRANSLOCO_CONFIG, TRANSLOCO_LOADER, TranslocoConfig, TranslocoLoader, TranslocoModule } from '@ngneat/transloco';
+import { TRANSLOCO_CONFIG, TRANSLOCO_LOADER, TranslocoConfig, TranslocoLoader, TranslocoModule } from '@jsverse/transloco';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
 
+@Injectable()
 export class TranslocoHttpLoader implements TranslocoLoader {
   constructor(private http: HttpClient) {}
 

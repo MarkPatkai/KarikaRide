@@ -11,16 +11,7 @@ import { OpeningHoursPage } from './pages/opening-hours/opening-hours.page';
 import { ServiceCapacityPage } from './pages/service-capacity/service-capacity.page';
 
 @NgModule({
-  declarations: [
-    LoginPage,
-    DashboardPage,
-    BicycleCrudPage,
-    CategoryCrudPage,
-    AccessoryCrudPage,
-    RentalsTodayPage,
-    OpeningHoursPage,
-    ServiceCapacityPage
-  ],
+  declarations: [ ],
   imports: [SharedModule, AdminRoutingModule]
 })
 export class AdminModule {}

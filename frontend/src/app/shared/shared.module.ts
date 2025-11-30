@@ -7,8 +7,7 @@ import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { TranslocoModule } from '@ngneat/transloco';
+import { TranslocoModule } from  '@jsverse/transloco';
 
 @NgModule({
   imports: [
@@ -21,7 +20,6 @@ import { TranslocoModule } from '@ngneat/transloco';
     TableModule,
     DropdownModule,
     CalendarModule,
-    InputTextareaModule,
     TranslocoModule
   ],
   exports: [
@@ -34,7 +32,6 @@ import { TranslocoModule } from '@ngneat/transloco';
     TableModule,
     DropdownModule,
     CalendarModule,
-    InputTextareaModule,
     TranslocoModule
   ]
 })

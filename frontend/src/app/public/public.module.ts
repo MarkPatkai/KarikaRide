@@ -8,7 +8,7 @@ import { BikeDetailsComponent } from './components/bike-details/bike-details.com
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [RentBikePage, ServiceBookingPage, CalendarComponent, BikeListComponent, BikeDetailsComponent],
+  declarations: [],
   imports: [SharedModule, PublicRoutingModule]
 })
 export class PublicModule {}
