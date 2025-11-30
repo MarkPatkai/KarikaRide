@@ -1,0 +1,849 @@
+openapi: 3.1.0
+info:
+  title: KarikaRide API
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /public/categories:
+    get:
+      summary: List bicycle categories
+      tags: [Public]
+      responses:
+        '200':
+          description: Category list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BicycleCategory'
+  /public/bicycles:
+    get:
+      summary: List bicycles (optionally filtered by category)
+      tags: [Public]
+      parameters:
+        - name: categoryId
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Bicycle list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bicycle'
+  /public/availability:
+    get:
+      summary: Get bicycles available in a time period
+      tags: [Public]
+      parameters:
+        - name: from
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: to
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Available bicycles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bicycle'
+  /public/rental:
+    post:
+      summary: Create rental
+      tags: [Public]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRentalRequest'
+      responses:
+        '201':
+          description: Rental created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rental'
+  /public/service/capacity:
+    get:
+      summary: Get remaining service capacity for date
+      tags: [Public]
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Capacity info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  remaining:
+                    type: integer
+                  capacity:
+                    type: integer
+  /public/service-booking:
+    post:
+      summary: Create service booking
+      tags: [Public]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceBookingRequest'
+      responses:
+        '201':
+          description: Service booking created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceBooking'
+  /admin/login:
+    post:
+      summary: Login and receive JWT
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required: [email, password]
+      responses:
+        '200':
+          description: JWT token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+  /admin/categories:
+    get:
+      summary: List categories
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Category list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BicycleCategory'
+    post:
+      summary: Create category
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BicycleCategoryInput'
+      responses:
+        '201':
+          description: Created category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BicycleCategory'
+  /admin/categories/{id}:
+    get:
+      summary: Get category by id
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BicycleCategory'
+    put:
+      summary: Update category
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BicycleCategoryInput'
+      responses:
+        '200':
+          description: Updated category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BicycleCategory'
+    delete:
+      summary: Delete category
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Deleted
+  /admin/bicycle-templates:
+    get:
+      summary: List bicycle templates
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Template list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BicycleTemplate'
+    post:
+      summary: Create bicycle template
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BicycleTemplateInput'
+      responses:
+        '201':
+          description: Created template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BicycleTemplate'
+  /admin/bicycle-templates/{id}:
+    get:
+      summary: Get template by id
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BicycleTemplate'
+    put:
+      summary: Update template
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BicycleTemplateInput'
+      responses:
+        '200':
+          description: Updated template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BicycleTemplate'
+    delete:
+      summary: Delete template
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Deleted
+  /admin/bicycles:
+    get:
+      summary: List bicycles
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Bicycle list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bicycle'
+    post:
+      summary: Create bicycle
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BicycleInput'
+      responses:
+        '201':
+          description: Created bicycle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bicycle'
+  /admin/bicycles/{id}:
+    get:
+      summary: Get bicycle by id
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Bicycle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bicycle'
+    put:
+      summary: Update bicycle
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BicycleInput'
+      responses:
+        '200':
+          description: Updated bicycle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bicycle'
+    delete:
+      summary: Delete bicycle
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Deleted
+  /admin/accessories:
+    get:
+      summary: List accessories
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Accessory list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Accessory'
+    post:
+      summary: Create accessory
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessoryInput'
+      responses:
+        '201':
+          description: Created accessory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accessory'
+  /admin/accessories/{id}:
+    get:
+      summary: Get accessory by id
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Accessory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accessory'
+    put:
+      summary: Update accessory
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessoryInput'
+      responses:
+        '200':
+          description: Updated accessory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accessory'
+    delete:
+      summary: Delete accessory
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Deleted
+  /admin/opening-hours:
+    get:
+      summary: List opening hours
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Opening hours
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OpeningHours'
+    post:
+      summary: Create opening hours entry
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpeningHoursInput'
+      responses:
+        '201':
+          description: Created opening hours
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpeningHours'
+  /admin/opening-hours/{id}:
+    put:
+      summary: Update opening hours entry
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpeningHoursInput'
+      responses:
+        '200':
+          description: Updated opening hours
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpeningHours'
+    delete:
+      summary: Delete opening hours entry
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Deleted
+  /admin/service-capacity:
+    get:
+      summary: List service capacity entries
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Service capacity list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServiceCapacity'
+    post:
+      summary: Create service capacity entry
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceCapacityInput'
+      responses:
+        '201':
+          description: Created service capacity entry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceCapacity'
+  /admin/service-capacity/{id}:
+    put:
+      summary: Update service capacity entry
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceCapacityInput'
+      responses:
+        '200':
+          description: Updated service capacity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceCapacity'
+    delete:
+      summary: Delete service capacity entry
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Deleted
+  /admin/rentals/today:
+    get:
+      summary: Rentals for current day
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      responses:
+        '200':
+          description: Rental list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Rental'
+  /admin/rental/{id}/status:
+    put:
+      summary: Update rental status
+      security: [{ bearerAuth: [] }]
+      tags: [Admin]
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [confirmed, cancelled, completed]
+              required: [status]
+      responses:
+        '200':
+          description: Updated rental
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rental'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    IdParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  schemas:
+    BicycleCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        priceHour:
+          type: number
+        priceDay:
+          type: number
+        description:
+          type: string
+      required: [id, name, priceHour, priceDay]
+    BicycleCategoryInput:
+      type: object
+      properties:
+        name:
+          type: string
+        priceHour:
+          type: number
+        priceDay:
+          type: number
+        description:
+          type: string
+      required: [name, priceHour, priceDay]
+    BicycleTemplate:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        recommendedFor:
+          type: string
+        size:
+          type: string
+      required: [id, name, recommendedFor, size]
+    BicycleTemplateInput:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        recommendedFor:
+          type: string
+        size:
+          type: string
+      required: [name, recommendedFor, size]
+    Bicycle:
+      type: object
+      properties:
+        id:
+          type: integer
+        categoryId:
+          type: integer
+        templateId:
+          type: integer
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+        recommendedFor:
+          type: string
+        size:
+          type: string
+        imageUrl:
+          type: string
+        status:
+          type: string
+          enum: [active, inactive]
+      required: [id, categoryId, name, description, recommendedFor, size, imageUrl, status]
+    BicycleInput:
+      type: object
+      properties:
+        categoryId:
+          type: integer
+        templateId:
+          type: integer
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+        recommendedFor:
+          type: string
+        size:
+          type: string
+        imageUrl:
+          type: string
+        status:
+          type: string
+          enum: [active, inactive]
+      required: [categoryId, name, description, recommendedFor, size, imageUrl, status]
+    Accessory:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        imageUrl:
+          type: string
+      required: [id, name, price, description, imageUrl]
+    AccessoryInput:
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        imageUrl:
+          type: string
+      required: [name, price, description, imageUrl]
+    Rental:
+      type: object
+      properties:
+        id:
+          type: integer
+        bicycleId:
+          type: integer
+        userName:
+          type: string
+        userPhone:
+          type: string
+        userEmail:
+          type: string
+          nullable: true
+        fromDatetime:
+          type: string
+          format: date-time
+        toDatetime:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [confirmed, cancelled, completed]
+      required: [id, bicycleId, userName, userPhone, fromDatetime, toDatetime, status]
+    CreateRentalRequest:
+      type: object
+      properties:
+        bicycleId:
+          type: integer
+        userName:
+          type: string
+        userPhone:
+          type: string
+        userEmail:
+          type: string
+        fromDatetime:
+          type: string
+          format: date-time
+        toDatetime:
+          type: string
+          format: date-time
+      required: [bicycleId, userName, userPhone, fromDatetime, toDatetime]
+    OpeningHours:
+      type: object
+      properties:
+        id:
+          type: integer
+        weekday:
+          type: integer
+          description: 0 = Monday
+        openTime:
+          type: string
+        closeTime:
+          type: string
+      required: [id, weekday, openTime, closeTime]
+    OpeningHoursInput:
+      type: object
+      properties:
+        weekday:
+          type: integer
+          description: 0 = Monday
+        openTime:
+          type: string
+        closeTime:
+          type: string
+      required: [weekday, openTime, closeTime]
+    ServiceBooking:
+      type: object
+      properties:
+        id:
+          type: integer
+        date:
+          type: string
+          format: date
+        userName:
+          type: string
+        userPhone:
+          type: string
+        description:
+          type: string
+      required: [id, date, userName, userPhone, description]
+    ServiceBookingRequest:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        userName:
+          type: string
+        userPhone:
+          type: string
+        description:
+          type: string
+      required: [date, userName, userPhone, description]
+    ServiceCapacity:
+      type: object
+      properties:
+        id:
+          type: integer
+        weekday:
+          type: integer
+        capacity:
+          type: integer
+      required: [id, weekday, capacity]
+    ServiceCapacityInput:
+      type: object
+      properties:
+        weekday:
+          type: integer
+        capacity:
+          type: integer
+      required: [weekday, capacity]
