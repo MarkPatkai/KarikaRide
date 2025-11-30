@@ -11,5 +11,6 @@ FROM node:20-alpine
 WORKDIR /app
 COPY --from=base /app/node_modules ./node_modules
 COPY --from=base /app/dist ./dist
+COPY --from=base /app/package.json ./package.json
 ENV PORT=3000
 CMD ["node", "dist/index.js"]
