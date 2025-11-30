@@ -1,8 +1,5 @@
 export interface RentalStepperState {
-  step1: {
-    from: Date | null;
-    to: Date | null;
-  };
+  step1: RentalDateData;
   step2: {
     men: number;
     women: number;
@@ -15,6 +12,13 @@ export interface RentalStepperState {
     selectedChildren: number[];
     selectedAccessories: number[];
   };
+}
+
+export interface RentalDateData {
+  startDate: Date | null;
+  endDate?: Date | null;
+  multiDay: boolean;
+  arrivalTime: string | null;
 }
 
 export interface AvailabilitySummary {
