@@ -21,6 +21,20 @@ KarikaRide is a bike rental web application that offers a public booking experie
 3. Scaffold the Angular workspace using the structure outlined in `docs/architecture.md`, wiring services to the documented endpoints.
 4. Integrate Transloco and PrimeNG for UI and localization, then implement pages/components incrementally.
 
+## Run the demo stack locally
+
+The repository ships with a Docker-based demo that spins up MySQL (with seed data), the Express API, and the Angular dev server.
+
+```bash
+./run-demo.sh
+```
+
+What you get:
+
+- **Database** preloaded with sample categories, bikes, accessories, hours, and service capacity.
+- **Admin login** defaults to `admin/admin` via `/api/admin/login`.
+- **Ports**: API on `3000`, frontend on `4200`, MySQL on `3306`.
+
 ## Availability logic refresher
 
 A bicycle is unavailable for a requested period when a confirmed rental overlaps the requested window. For SQL-backed checks:
