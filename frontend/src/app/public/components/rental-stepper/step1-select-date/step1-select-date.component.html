@@ -6,15 +6,15 @@
     </div>
   </ng-template>
 
-  <div class="calendar-wrapper">
-    <p-calendar
-      [(ngModel)]="range"
-      selectionMode="range"
-      [showTime]="true"
-      hourFormat="24"
-      dateFormat="yy-mm-dd"
-      [inline]="true"
-    ></p-calendar>
+  <div class="date-picker-container">
+    <label for="start-date">Select Date:</label>
+    <input type="date" id="start-date" [(ngModel)]="startDate" (change)="onDateChange()" />
+    <label for="end-date">to</label>
+    <input type="date" id="end-date" [(ngModel)]="endDate" (change)="onDateChange()" />
+    <div>
+      <input type="checkbox" id="all-day" [(ngModel)]="isAllDay" />
+      <label for="all-day">All Day</label>
+    </div>
   </div>
 
   <p-message *ngIf="error" severity="error" [text]="error"></p-message>

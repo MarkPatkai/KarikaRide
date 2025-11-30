@@ -18,18 +18,32 @@ export class Step1SelectDateComponent {
 
   range: Date[] = [];
   error = '';
+  startDate: Date | null = null;
+  endDate: Date | null = null;
+  isAllDay: boolean = false;
+
+  onDateChange() {
+    if (this.isAllDay) {
+      const start = this.startDate;
+      if (start) {
+        this.endDate = new Date(start);
+        this.endDate.setDate(this.endDate.getDate() + 1); // Set end date to the next day
+      }
+    }
+  }
 
   onNext() {
     this.error = '';
-    const [from, to] = this.range;
+    const from = this.startDate;
+    const to = this.endDate || this.startDate;
+
     if (!from || !to) {
-      this.error = 'Kérjük, válassz kezdő és záró időpontot.';
+      this.error = 'Please select both start and end dates.';
       return;
     }
 
-    const diffMs = to.getTime() - from.getTime();
-    if (diffMs < 60 * 60 * 1000) {
-      this.error = 'Legalább 1 órás bérlés szükséges.';
+      if ((from >= to) && !this.isAllDay) { 
+      this.error = 'End date must be after start date.';
       return;
     }
 

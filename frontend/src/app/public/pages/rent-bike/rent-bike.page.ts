@@ -68,7 +68,9 @@ export class RentBikePage implements OnInit {
 
   onSelectDate(range: { from: Date; to: Date }) {
     this.state.step1 = range;
-    this.availabilityService.getAvailabilitySummary(range.from.toISOString(), range.to.toISOString()).subscribe(summary => {
+    const fromDate = new Date(range.from);
+    const toDate = new Date(range.to);
+    this.availabilityService.getAvailabilitySummary(fromDate.toISOString(), toDate.toISOString()).subscribe(summary => {
       this.summary = summary;
       this.activeIndex = 1;
     });
@@ -77,8 +79,10 @@ export class RentBikePage implements OnInit {
   onSelectNeeds(payload: RentalNeeds) {
     this.state.step2 = payload;
     if (!this.state.step1.from || !this.state.step1.to) return;
+    const fromDate = typeof this.state.step1.from === 'string' ? this.state.step1.from : new Date(this.state.step1.from).toISOString();
+    const toDate = typeof this.state.step1.to === 'string' ? this.state.step1.to : new Date(this.state.step1.to).toISOString();
     this.availabilityService
-      .listAvailability(this.state.step1.from.toISOString(), this.state.step1.to.toISOString(), payload)
+      .listAvailability(fromDate, toDate, payload)
       .subscribe({
         next: result => {
           this.errorMessage = '';
