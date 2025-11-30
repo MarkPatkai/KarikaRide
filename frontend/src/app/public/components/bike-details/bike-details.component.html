@@ -1,0 +1,22 @@
+<p-card *ngIf="bicycle">
+  <ng-template pTemplate="title">{{ bicycle.name }}</ng-template>
+  <ng-template pTemplate="subtitle">
+    {{ category?.name }} • {{ bicycle.size }}
+  </ng-template>
+  <p>{{ bicycle.description }}</p>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'public.renter.name' | transloco }}</label>
+      <input pInputText [(ngModel)]="renter.name" />
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'public.renter.phone' | transloco }}</label>
+      <input pInputText [(ngModel)]="renter.phone" />
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'public.renter.email' | transloco }}</label>
+      <input pInputText [(ngModel)]="renter.email" />
+    </div>
+  </div>
+  <button pButton type="button" label="{{ 'public.cta.book' | transloco }}" (click)="submitRental()" [disabled]="!bookingRange"></button>
+</p-card>

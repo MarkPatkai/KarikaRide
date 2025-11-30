@@ -1,0 +1,19 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'admin.openingHours.title' | transloco }}</ng-template>
+  <p-table [value]="openingHours">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Weekday</th>
+        <th>Open</th>
+        <th>Close</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+      <tr>
+        <td>{{ row.weekday }}</td>
+        <td>{{ row.openTime }}</td>
+        <td>{{ row.closeTime }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

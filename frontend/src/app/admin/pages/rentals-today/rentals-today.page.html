@@ -1,0 +1,29 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'admin.rentals.title' | transloco }}</ng-template>
+  <p-table [value]="rentals">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Bike</th>
+        <th>User</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rental>
+      <tr>
+        <td>{{ rental.bicycleId }}</td>
+        <td>{{ rental.userName }}</td>
+        <td>{{ rental.fromDatetime }}</td>
+        <td>{{ rental.toDatetime }}</td>
+        <td>{{ rental.status }}</td>
+        <td>
+          <button pButton type="button" label="Confirm" (click)="updateStatus(rental, 'confirmed')"></button>
+          <button pButton type="button" label="Cancel" class="p-button-secondary" (click)="updateStatus(rental, 'cancelled')"></button>
+          <button pButton type="button" label="Complete" class="p-button-success" (click)="updateStatus(rental, 'completed')"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

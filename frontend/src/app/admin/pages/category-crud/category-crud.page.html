@@ -1,0 +1,39 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'admin.categories.title' | transloco }}</ng-template>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-3">
+      <label>{{ 'admin.forms.name' | transloco }}</label>
+      <input pInputText [(ngModel)]="form.name" />
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label>{{ 'admin.forms.priceHour' | transloco }}</label>
+      <input pInputText type="number" [(ngModel)]="form.priceHour" />
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label>{{ 'admin.forms.priceDay' | transloco }}</label>
+      <input pInputText type="number" [(ngModel)]="form.priceDay" />
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label>{{ 'admin.forms.description' | transloco }}</label>
+      <input pInputText [(ngModel)]="form.description" />
+    </div>
+  </div>
+  <button pButton type="button" label="{{ 'admin.forms.save' | transloco }}" (click)="save()"></button>
+</p-card>
+
+<p-table [value]="categories">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Hour</th>
+      <th>Day</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-category>
+    <tr>
+      <td>{{ category.name }}</td>
+      <td>{{ category.priceHour }}</td>
+      <td>{{ category.priceDay }}</td>
+    </tr>
+  </ng-template>
+</p-table>

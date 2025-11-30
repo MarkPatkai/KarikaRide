@@ -1,0 +1,17 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'admin.accessories.title' | transloco }}</ng-template>
+  <p-table [value]="accessories">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-accessory>
+      <tr>
+        <td>{{ accessory.name }}</td>
+        <td>{{ accessory.price }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

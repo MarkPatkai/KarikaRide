@@ -1,0 +1,7 @@
+<div class="card-grid">
+  <p-card *ngFor="let bike of bicycles" (click)="selectBike.emit(bike)" styleClass="p-3">
+    <ng-template pTemplate="title">{{ bike.name }}</ng-template>
+    <ng-template pTemplate="subtitle">{{ bike.size }} • {{ bike.recommendedFor }}</ng-template>
+    <p>{{ bike.description }}</p>
+  </p-card>
+</div>

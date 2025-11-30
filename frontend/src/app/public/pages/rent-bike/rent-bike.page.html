@@ -1,0 +1,27 @@
+<div class="p-grid p-formgrid">
+  <div class="p-field p-col-12 p-md-6">
+    <label>{{ 'public.filters.category' | transloco }}</label>
+    <p-dropdown
+      [options]="categories"
+      optionLabel="name"
+      optionValue="id"
+      placeholder="Select category"
+      (onChange)="onCategoryChange($event.value)"
+    ></p-dropdown>
+  </div>
+  <div class="p-field p-col-12 p-md-6">
+    <label>{{ 'public.filters.dates' | transloco }}</label>
+    <app-calendar (dateRangeSelected)="onDateRangeSelected($event)"></app-calendar>
+  </div>
+</div>
+
+<app-bike-list [bicycles]="bicycles" (selectBike)="onSelectBike($event)"></app-bike-list>
+
+<app-bike-details
+  [bicycle]="selectedBike"
+  [category]="selectedCategory"
+  [bookingRange]="bookingRange"
+  (createRental)="onCreateRental($event)"
+></app-bike-details>
+
+<p *ngIf="statusMessage">{{ statusMessage }}</p>

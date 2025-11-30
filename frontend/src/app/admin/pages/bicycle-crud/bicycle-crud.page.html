@@ -1,0 +1,39 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'admin.bicycles.title' | transloco }}</ng-template>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'admin.forms.name' | transloco }}</label>
+      <input pInputText [(ngModel)]="form.name" />
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'admin.forms.category' | transloco }}</label>
+      <p-dropdown [options]="categories" optionLabel="name" optionValue="id" [(ngModel)]="form.categoryId"></p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'admin.forms.status' | transloco }}</label>
+      <p-dropdown [options]="['active','inactive']" [(ngModel)]="form.status"></p-dropdown>
+    </div>
+    <div class="p-field p-col-12">
+      <label>{{ 'admin.forms.description' | transloco }}</label>
+      <textarea pInputTextarea rows="2" [(ngModel)]="form.description"></textarea>
+    </div>
+  </div>
+  <button pButton type="button" label="{{ 'admin.forms.save' | transloco }}" (click)="save()"></button>
+</p-card>
+
+<p-table [value]="bicycles">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Status</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-bike>
+    <tr>
+      <td>{{ bike.name }}</td>
+      <td>{{ bike.categoryId }}</td>
+      <td>{{ bike.status }}</td>
+    </tr>
+  </ng-template>
+</p-table>
