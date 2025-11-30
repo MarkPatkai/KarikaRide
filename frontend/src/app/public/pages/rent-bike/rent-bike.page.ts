@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { DropdownModule } from 'primeng/dropdown';
+import { TranslocoModule } from '@jsverse/transloco';
+import { CommonModule } from '@angular/common';
+import { CalendarComponent } from '../../components/calendar/calendar.component';
+import { BikeListComponent } from '../../components/bike-list/bike-list.component';
+import { BikeDetailsComponent } from '../../components/bike-details/bike-details.component';
 import { Bicycle, BicycleCategory, CreateRentalRequest } from '../../../core/models/entities';
 import { AvailabilityService } from '../../services/availability.service';
 import { BicycleService } from '../../services/bicycle.service';
@@ -7,6 +13,15 @@ import { RentalService } from '../../services/rental.service';
 
 @Component({
   selector: 'app-rent-bike',
+  standalone: true,
+  imports: [
+    CommonModule,
+    DropdownModule,
+    TranslocoModule,
+    CalendarComponent,
+    BikeListComponent,
+    BikeDetailsComponent
+  ],
   templateUrl: './rent-bike.page.html'
 })
 export class RentBikePage implements OnInit {

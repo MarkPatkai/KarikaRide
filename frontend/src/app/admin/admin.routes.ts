@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AuthGuard } from '../core/guards/auth.guard';
-import { LoginPage } from './pages/login/login.page';
-import { DashboardPage } from './pages/dashboard/dashboard.page';
+import { AccessoryCrudPage } from './pages/accessory-crud/accessory-crud.page';
 import { BicycleCrudPage } from './pages/bicycle-crud/bicycle-crud.page';
 import { CategoryCrudPage } from './pages/category-crud/category-crud.page';
-import { AccessoryCrudPage } from './pages/accessory-crud/accessory-crud.page';
-import { RentalsTodayPage } from './pages/rentals-today/rentals-today.page';
+import { DashboardPage } from './pages/dashboard/dashboard.page';
+import { LoginPage } from './pages/login/login.page';
 import { OpeningHoursPage } from './pages/opening-hours/opening-hours.page';
+import { RentalsTodayPage } from './pages/rentals-today/rentals-today.page';
 import { ServiceCapacityPage } from './pages/service-capacity/service-capacity.page';
 
-const routes: Routes = [
+export const ADMIN_ROUTES: Routes = [
   { path: 'login', component: LoginPage },
   {
     path: '',
@@ -27,9 +26,3 @@ const routes: Routes = [
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AdminRoutingModule {}
