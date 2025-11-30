@@ -1,25 +1,55 @@
 <p-card>
   <ng-template pTemplate="header">
-    <div class="card-header">
-      <h2>Válassz időpontot / Choose your rental time</h2>
-      <p>Állítsd be a kezdő és záró időpontokat a foglaláshoz.</p>
-    </div>
+    <h2>{{ 'rental.select_date' | transloco }}</h2>
   </ng-template>
 
-  <div class="date-picker-container">
-    <label for="start-date">Select Date:</label>
-    <input type="date" id="start-date" [(ngModel)]="startDate" (change)="onDateChange()" />
-    <label for="end-date">to</label>
-    <input type="date" id="end-date" [(ngModel)]="endDate" (change)="onDateChange()" />
-    <div>
-      <input type="checkbox" id="all-day" [(ngModel)]="isAllDay" />
-      <label for="all-day">All Day</label>
-    </div>
+  <div class="form-group">
+    <label for="start-date">{{ 'rental.start_date' | transloco }}</label>
+    <p-calendar
+      id="start-date"
+      [(ngModel)]="startDate"
+      (ngModelChange)="onStartDateChange($event)"
+      dateFormat="yy-mm-dd"
+      [minDate]="today"
+    ></p-calendar>
   </div>
 
-  <p-message *ngIf="error" severity="error" [text]="error"></p-message>
+  <div class="checkbox-row">
+    <p-checkbox
+      binary="true"
+      inputId="multi-day"
+      [(ngModel)]="multiDay"
+      (ngModelChange)="toggleMultiDay($event)"
+    ></p-checkbox>
+    <label for="multi-day">{{ 'rental.multi_day' | transloco }}</label>
+  </div>
+
+  <div class="form-group" *ngIf="multiDay">
+    <label for="end-date">{{ 'rental.end_date' | transloco }}</label>
+    <p-calendar
+      id="end-date"
+      [(ngModel)]="endDate"
+      (ngModelChange)="onEndDateChange($event)"
+      dateFormat="yy-mm-dd"
+      [minDate]="startDate || today"
+      [disabled]="!multiDay"
+    ></p-calendar>
+  </div>
+
+  <div class="form-group">
+    <label for="arrival-time">{{ 'rental.estimated_arrival' | transloco }}</label>
+    <p-calendar
+      id="arrival-time"
+      [(ngModel)]="arrivalTime"
+      (ngModelChange)="onArrivalTimeChange($event)"
+      timeOnly="true"
+      hourFormat="24"
+    ></p-calendar>
+  </div>
+
+  <p-message *ngIf="isRangeInvalid" severity="error" [text]="'rental.invalid_range' | transloco"></p-message>
 
   <div class="actions">
-    <button pButton label="Tovább" icon="pi pi-arrow-right" (click)="onNext()"></button>
+    <button pButton type="button" [disabled]="isInvalid" label="{{ 'shared.continue' | transloco }}" (click)="onNext()"></button>
   </div>
 </p-card>

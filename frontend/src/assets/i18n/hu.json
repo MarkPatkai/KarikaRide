@@ -1,7 +1,7 @@
 {
   "shared": {
     "title": "KarikaRide",
-    "continue": "Continue"
+    "continue": "Tovább"
   },
   "public": {
     "nav": {
@@ -69,11 +69,11 @@
     }
   },
   "rental": {
-    "select_date": "Select your rental date",
-    "multi_day": "Multi-day rental",
-    "end_date": "End date",
-    "start_date": "Start date",
-    "estimated_arrival": "Estimated arrival time",
-    "invalid_range": "End date must be after start date"
+    "select_date": "Válassza ki a bérlés dátumát",
+    "multi_day": "Több napos bérlés",
+    "end_date": "Befejező dátum",
+    "start_date": "Kezdő dátum",
+    "estimated_arrival": "Várható érkezési idő",
+    "invalid_range": "A záró dátumnak a kezdő dátum után kell lennie"
   }
 }

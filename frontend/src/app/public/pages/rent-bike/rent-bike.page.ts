@@ -15,6 +15,7 @@ import {
   AvailabilityListResponse,
   AvailabilitySummary,
   ContactInfo,
+  RentalDateData,
   RentalNeeds,
   RentalStepperState
 } from '../../../core/models/rental-stepper';
@@ -50,7 +51,7 @@ export class RentBikePage implements OnInit {
   errorMessage = '';
 
   state: RentalStepperState = {
-    step1: { from: null, to: null },
+    step1: { startDate: null, endDate: null, multiDay: false, arrivalTime: null },
     step2: { men: 0, women: 0, children: 0, accessories: {} },
     step3: { selectedMen: [], selectedWomen: [], selectedChildren: [], selectedAccessories: [] }
   };
@@ -66,10 +67,10 @@ export class RentBikePage implements OnInit {
     this.contactService.getContactInfo().subscribe(info => (this.contactInfo = info));
   }
 
-  onSelectDate(range: { from: Date; to: Date }) {
+  onSelectDate(range: RentalDateData) {
     this.state.step1 = range;
-    const fromDate = new Date(range.from);
-    const toDate = new Date(range.to);
+    const fromDate = new Date(range.startDate!);
+    const toDate = range.multiDay && range.endDate ? new Date(range.endDate) : new Date(range.startDate!);
     this.availabilityService.getAvailabilitySummary(fromDate.toISOString(), toDate.toISOString()).subscribe(summary => {
       this.summary = summary;
       this.activeIndex = 1;
@@ -78,9 +79,11 @@ export class RentBikePage implements OnInit {
 
   onSelectNeeds(payload: RentalNeeds) {
     this.state.step2 = payload;
-    if (!this.state.step1.from || !this.state.step1.to) return;
-    const fromDate = typeof this.state.step1.from === 'string' ? this.state.step1.from : new Date(this.state.step1.from).toISOString();
-    const toDate = typeof this.state.step1.to === 'string' ? this.state.step1.to : new Date(this.state.step1.to).toISOString();
+    if (!this.state.step1.startDate) return;
+    const fromDate = new Date(this.state.step1.startDate).toISOString();
+    const toDate = this.state.step1.multiDay && this.state.step1.endDate
+      ? new Date(this.state.step1.endDate).toISOString()
+      : new Date(this.state.step1.startDate).toISOString();
     this.availabilityService
       .listAvailability(fromDate, toDate, payload)
       .subscribe({

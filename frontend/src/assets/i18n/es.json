@@ -1,7 +1,7 @@
 {
   "shared": {
     "title": "KarikaRide",
-    "continue": "Continue"
+    "continue": "Continuar"
   },
   "public": {
     "nav": {
@@ -69,11 +69,11 @@
     }
   },
   "rental": {
-    "select_date": "Select your rental date",
-    "multi_day": "Multi-day rental",
-    "end_date": "End date",
-    "start_date": "Start date",
-    "estimated_arrival": "Estimated arrival time",
-    "invalid_range": "End date must be after start date"
+    "select_date": "Selecciona tu fecha de alquiler",
+    "multi_day": "Alquiler de varios días",
+    "end_date": "Fecha de finalización",
+    "start_date": "Fecha de inicio",
+    "estimated_arrival": "Hora estimada de llegada",
+    "invalid_range": "La fecha de finalización debe ser posterior a la fecha de inicio"
   }
 }
