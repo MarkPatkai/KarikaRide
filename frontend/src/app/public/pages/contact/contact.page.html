@@ -5,9 +5,9 @@
 
 <p-card>
   <ng-template pTemplate="title">{{ 'public.contact.cardTitle' | transloco }}</ng-template>
-  <p>{{ 'public.contact.email' | transloco }}: hello&#64;karikaride.com</p>
-  <p>{{ 'public.contact.phone' | transloco }}: +36 30 123 4567</p>
-  <p>{{ 'public.contact.address' | transloco }}: 1031 Budapest, Bike Lane 12.</p>
+  <p>{{ 'public.contact.email' | transloco }}: {{ contactInfo?.email }}</p>
+  <p>{{ 'public.contact.phone' | transloco }}: {{ contactInfo?.phone }}</p>
+  <p>{{ 'public.contact.address' | transloco }}: {{ contactInfo?.address }}</p>
   <button
     pButton
     type="button"

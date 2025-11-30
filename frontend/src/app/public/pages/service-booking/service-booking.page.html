@@ -21,19 +21,21 @@
           pInputText
           [(ngModel)]="form.name"
           [placeholder]="'public.serviceBooking.fullNamePlaceholder' | transloco"
+          style="width: 100%;"
         />
       </div>
       <div class="p-field p-col-12 p-md-6">
         <label>{{ 'public.renter.phone' | transloco }}</label>
-        <input pInputText [(ngModel)]="form.phone" [placeholder]="'public.renter.phone' | transloco" />
+        <input pInputText [(ngModel)]="form.phone" [placeholder]="'public.renter.phone' | transloco" style="width: 100%;" />
       </div>
       <div class="p-field p-col-12">
         <label>{{ 'public.serviceBooking.description' | transloco }}</label>
         <textarea
           pInputTextarea
-          rows="3"
+          rows="5"
           [(ngModel)]="form.description"
           [placeholder]="'public.serviceBooking.descriptionPlaceholder' | transloco"
+          style="width: 100%;"
         ></textarea>
       </div>
     </div>

@@ -50,12 +50,19 @@ h6 {
   margin: 0 0 0.5rem;
 }
 
+header-white {
+  color: #ffffff;
+  padding: 0.5rem 0;
+}
+
 h1 {
   font-size: 32px;
 }
 
 h2 {
   font-size: 24px;
+  padding: 1rem;
+  color: white;
 }
 
 h3 {
@@ -229,7 +236,7 @@ p {
 .p-button.p-button-secondary,
 .p-button.p-button-outlined {
   background: transparent;
-  color: var(--karika-blue);
+  color: white;
   border: 1px solid var(--karika-blue);
 }
 
