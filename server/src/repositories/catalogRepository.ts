@@ -25,6 +25,7 @@ export interface Bicycle {
   recommended_for: string;
   size: string;
   image_url: string;
+  rider_type: 'men' | 'women' | 'children';
   status: 'active' | 'inactive';
 }
 
@@ -88,20 +89,20 @@ export async function listBicycles(categoryId?: number): Promise<Bicycle[]> {
   const pool = getPool();
   if (categoryId) {
     const [rows] = await pool.query(
-      'SELECT id, category_id, template_id, name, description, recommended_for, size, image_url, status FROM bicycles WHERE category_id = :categoryId',
+      'SELECT id, category_id, template_id, name, description, recommended_for, size, image_url, rider_type, status FROM bicycles WHERE category_id = :categoryId',
       { categoryId }
     );
     return rows as Bicycle[];
   }
   const [rows] = await pool.query(
-    'SELECT id, category_id, template_id, name, description, recommended_for, size, image_url, status FROM bicycles'
+    'SELECT id, category_id, template_id, name, description, recommended_for, size, image_url, rider_type, status FROM bicycles'
   );
   return rows as Bicycle[];
 }
 
 export async function createBicycle(data: Omit<Bicycle, 'id'>): Promise<number> {
   const [result] = await getPool().execute(
-    'INSERT INTO bicycles (category_id, template_id, name, description, recommended_for, size, image_url, status) VALUES (:category_id, :template_id, :name, :description, :recommended_for, :size, :image_url, :status)',
+    'INSERT INTO bicycles (category_id, template_id, name, description, recommended_for, size, image_url, rider_type, status) VALUES (:category_id, :template_id, :name, :description, :recommended_for, :size, :image_url, :rider_type, :status)',
     data
   );
   return (result as any).insertId;
@@ -109,7 +110,7 @@ export async function createBicycle(data: Omit<Bicycle, 'id'>): Promise<number> 
 
 export async function updateBicycle(id: number, data: Partial<Omit<Bicycle, 'id'>>): Promise<void> {
   await getPool().execute(
-    'UPDATE bicycles SET category_id = COALESCE(:category_id, category_id), template_id = :template_id, name = COALESCE(:name, name), description = COALESCE(:description, description), recommended_for = COALESCE(:recommended_for, recommended_for), size = COALESCE(:size, size), image_url = COALESCE(:image_url, image_url), status = COALESCE(:status, status) WHERE id = :id',
+    'UPDATE bicycles SET category_id = COALESCE(:category_id, category_id), template_id = :template_id, name = COALESCE(:name, name), description = COALESCE(:description, description), recommended_for = COALESCE(:recommended_for, recommended_for), size = COALESCE(:size, size), image_url = COALESCE(:image_url, image_url), rider_type = COALESCE(:rider_type, rider_type), status = COALESCE(:status, status) WHERE id = :id',
     { id, ...data }
   );
 }

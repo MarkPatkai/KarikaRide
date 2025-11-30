@@ -9,9 +9,9 @@ INSERT INTO bicycle_templates (name, description, recommended_for, size) VALUES
   ('City Classic', 'Comfortable upright geometry with racks and lights.', 'Casual riders', 'M'),
   ('Trail Blazer', 'Hardtail with wide tires and disc brakes.', 'Off-road adventures', 'L');
 
-INSERT INTO bicycles (category_id, template_id, name, description, recommended_for, size, image_url, status) VALUES
-  (1, 1, 'City Rider 3', 'Reliable 3-speed commuter with fenders.', 'Urban commutes', 'M', 'https://example.com/bikes/city-rider.jpg', 'active'),
-  (2, 2, 'Summit Pro', 'Responsive hardtail ready for local trails.', 'Weekend trail rides', 'L', 'https://example.com/bikes/summit-pro.jpg', 'active');
+INSERT INTO bicycles (category_id, template_id, name, description, recommended_for, size, image_url, rider_type, status) VALUES
+  (1, 1, 'City Rider 3', 'Reliable 3-speed commuter with fenders.', 'Urban commutes', 'M', 'https://example.com/bikes/city-rider.jpg', 'men', 'active'),
+  (2, 2, 'Summit Pro', 'Responsive hardtail ready for local trails.', 'Weekend trail rides', 'L', 'https://example.com/bikes/summit-pro.jpg', 'women', 'active');
 
 INSERT INTO accessories (name, price, description, image_url) VALUES
   ('Helmet', 5.00, 'Certified safety helmet.', 'https://example.com/accessories/helmet.jpg'),
@@ -35,3 +35,5 @@ INSERT INTO service_capacity (weekday, capacity) VALUES
   (3, 4),
   (4, 4),
   (5, 2);
+
+INSERT INTO contact_info (email, phone) VALUES ('rentals@karikaride.hu', '+36 30 111 2222');

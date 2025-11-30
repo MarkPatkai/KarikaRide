@@ -1,0 +1,67 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="card-header">
+      <h2>Válaszd ki, mire van szükséged</h2>
+      <p>Állítsd be a biciklik és kiegészítők számát.</p>
+    </div>
+  </ng-template>
+
+  <div class="counter-grid">
+    <div class="counter">
+      <div class="label">Férfi kerékpár</div>
+      <div class="controls">
+        <button pButton icon="pi pi-minus" (click)="decrement('men')"></button>
+        <span>{{ men }}</span>
+        <button pButton icon="pi pi-plus" (click)="increment('men')"></button>
+      </div>
+      <small *ngIf="limits">Elérhető: {{ limits.men }}</small>
+    </div>
+
+    <div class="counter">
+      <div class="label">Női kerékpár</div>
+      <div class="controls">
+        <button pButton icon="pi pi-minus" (click)="decrement('women')"></button>
+        <span>{{ women }}</span>
+        <button pButton icon="pi pi-plus" (click)="increment('women')"></button>
+      </div>
+      <small *ngIf="limits">Elérhető: {{ limits.women }}</small>
+    </div>
+
+    <div class="counter">
+      <div class="label">Gyermek kerékpár</div>
+      <div class="controls">
+        <button pButton icon="pi pi-minus" (click)="decrement('children')"></button>
+        <span>{{ children }}</span>
+        <button pButton icon="pi pi-plus" (click)="increment('children')"></button>
+      </div>
+      <small *ngIf="limits">Elérhető: {{ limits.children }}</small>
+    </div>
+  </div>
+
+  <p-divider></p-divider>
+
+  <div class="accessories" *ngIf="accessories.length">
+    <h3>Kiegészítők (opcionális)</h3>
+    <div class="accessory" *ngFor="let accessory of accessories">
+      <div class="details">
+        <img [src]="accessory.imageUrl" [alt]="accessory.name" />
+        <div>
+          <div class="name">{{ accessory.name }}</div>
+          <div class="available">Elérhető: {{ limits?.accessories[accessory.id] ?? 0 }}</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button pButton icon="pi pi-minus" (click)="updateAccessory(accessory.id, -1, limits?.accessories[accessory.id] ?? 0)"></button>
+        <span>{{ accessorySelection[accessory.id] || 0 }}</span>
+        <button pButton icon="pi pi-plus" (click)="updateAccessory(accessory.id, 1, limits?.accessories[accessory.id] ?? 0)"></button>
+      </div>
+    </div>
+  </div>
+
+  <p-message *ngIf="error" severity="warn" [text]="error"></p-message>
+
+  <div class="actions">
+    <button pButton label="Vissza" class="p-button-text" icon="pi pi-arrow-left" (click)="back.emit()"></button>
+    <button pButton label="Tovább" icon="pi pi-arrow-right" (click)="onNext()"></button>
+  </div>
+</p-card>
