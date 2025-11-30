@@ -1,0 +1,100 @@
+-- MySQL / MariaDB schema for KarikaRide
+-- Run with: mysql -u<user> -p<pass> < db/schema.sql
+
+CREATE DATABASE IF NOT EXISTS karikaride CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE karikaride;
+
+-- Lookups & core entities
+CREATE TABLE bicycle_categories (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  price_hour DECIMAL(10,2) NOT NULL,
+  price_day DECIMAL(10,2) NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE bicycle_templates (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  description TEXT,
+  recommended_for VARCHAR(120) NOT NULL,
+  size VARCHAR(50) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE bicycles (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  category_id INT UNSIGNED NOT NULL,
+  template_id INT UNSIGNED NULL,
+  name VARCHAR(120) NOT NULL,
+  description TEXT,
+  recommended_for VARCHAR(120) NOT NULL,
+  size VARCHAR(50) NOT NULL,
+  image_url VARCHAR(255) NOT NULL,
+  status ENUM('active','inactive') NOT NULL DEFAULT 'active',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_bicycles_category FOREIGN KEY (category_id) REFERENCES bicycle_categories(id) ON DELETE CASCADE,
+  CONSTRAINT fk_bicycles_template FOREIGN KEY (template_id) REFERENCES bicycle_templates(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE accessories (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  description TEXT,
+  image_url VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE rentals (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  bicycle_id INT UNSIGNED NOT NULL,
+  user_name VARCHAR(120) NOT NULL,
+  user_phone VARCHAR(50) NOT NULL,
+  user_email VARCHAR(150) NULL,
+  from_datetime DATETIME NOT NULL,
+  to_datetime DATETIME NOT NULL,
+  status ENUM('confirmed','cancelled','completed') NOT NULL DEFAULT 'confirmed',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_rentals_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycles(id) ON DELETE CASCADE,
+  INDEX idx_rentals_bicycle_dates (bicycle_id, from_datetime, to_datetime)
+) ENGINE=InnoDB;
+
+CREATE TABLE opening_hours (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  weekday TINYINT UNSIGNED NOT NULL COMMENT '0 = Monday',
+  open_time TIME NOT NULL,
+  close_time TIME NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE service_bookings (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  date DATE NOT NULL,
+  user_name VARCHAR(120) NOT NULL,
+  user_phone VARCHAR(50) NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE service_capacity (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  weekday TINYINT UNSIGNED NOT NULL COMMENT '0 = Monday',
+  capacity INT UNSIGNED NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- Example view for daily rentals (optional for admin dashboard)
+CREATE OR REPLACE VIEW view_rentals_today AS
+SELECT *
+FROM rentals
+WHERE DATE(from_datetime) = CURDATE();
