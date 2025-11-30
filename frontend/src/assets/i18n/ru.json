@@ -6,7 +6,8 @@
   "public": {
     "nav": {
       "rent": "Rent a bike",
-      "service": "Service booking"
+      "service": "Service booking",
+      "contact": ""
     },
     "filters": {
       "category": "Category",
@@ -30,7 +31,9 @@
   },
   "admin": {
     "nav": {
-      "dashboard": "Admin"
+      "dashboard": "Admin",
+      "console": "",
+      "logout": ""
     },
     "login": {
       "title": "Admin login",
@@ -75,5 +78,626 @@
     "start_date": "Дата начала",
     "estimated_arrival": "Предполагаемое время прибытия",
     "invalid_range": "Дата окончания должна быть позже даты начала"
+  },
+  "language": {
+    "select_title": ""
+  },
+  "app": {
+    "admin": {
+      "admin": {
+        "routes": {
+          "angular_router": "",
+          "core_guards_auth_guard": "",
+          "pages_accessory_crud_accessory_crud_page": "",
+          "pages_bicycle_crud_bicycle_crud_page": "",
+          "pages_category_crud_category_crud_page": "",
+          "pages_dashboard_dashboard_page": "",
+          "pages_login_login_page": "",
+          "pages_opening_hours_opening_hours_page": "",
+          "pages_rentals_today_rentals_today_page": "",
+          "pages_service_capacity_service_capacity_": "",
+          "login": "",
+          "redirectto": "",
+          "pathmatch": "",
+          "dashboard": "",
+          "bicycles": "",
+          "categories": "",
+          "accessories": "",
+          "rentals": "",
+          "opening_hours": "",
+          "service_capacity": ""
+        }
+      },
+      "pages": {
+        "accessory-crud": {
+          "accessory-crud": {
+            "page": {
+              "name": "",
+              "price": "",
+              "angular_core": "",
+              "primeng_card": "",
+              "primeng_table": "",
+              "jsverse_transloco": "",
+              "angular_common": "",
+              "services_admin_api_service": "",
+              "core_models_entities": "",
+              "app_accessory_crud_page": "",
+              "accessory_crud_page_html": ""
+            }
+          }
+        },
+        "bicycle-crud": {
+          "bicycle-crud": {
+            "page": {
+              "name": "",
+              "category": "",
+              "status": "",
+              "angular_core": "",
+              "shared_shared_imports": "",
+              "primeng_card": "",
+              "primeng_button": "",
+              "primeng_table": "",
+              "primeng_dropdown": "",
+              "jsverse_transloco": "",
+              "services_admin_api_service": "",
+              "core_models_entities": "",
+              "app_bicycle_crud_page": "",
+              "bicycle_crud_page_html": "",
+              "active": ""
+            }
+          }
+        },
+        "category-crud": {
+          "category-crud": {
+            "page": {
+              "name": "",
+              "hour": "",
+              "day": "",
+              "angular_core": "",
+              "shared_shared_imports": "",
+              "primeng_card": "",
+              "primeng_button": "",
+              "primeng_table": "",
+              "jsverse_transloco": "",
+              "services_admin_api_service": "",
+              "core_models_entities": "",
+              "app_category_crud_page": "",
+              "category_crud_page_html": "",
+              "priceday_0_pricehour_0_description": ""
+            }
+          }
+        },
+        "dashboard": {
+          "dashboard": {
+            "page": {
+              "angular_core": "",
+              "primeng_card": "",
+              "jsverse_transloco": "",
+              "angular_common": "",
+              "app_dashboard_page": "",
+              "dashboard_page_html": "",
+              "bicycles_available": "",
+              "services_booked": "",
+              "overdue_returns": ""
+            }
+          }
+        },
+        "login": {
+          "login": {
+            "page": {
+              "email": "",
+              "password": "",
+              "angular_core": "",
+              "shared_shared_imports": "",
+              "primeng_card": "",
+              "primeng_button": "",
+              "jsverse_transloco": "",
+              "angular_router": "",
+              "core_services_auth_service": "",
+              "app_login_page": "",
+              "login_page_html": "",
+              "admin_dashboard": "",
+              "login_failed": ""
+            }
+          }
+        },
+        "opening-hours": {
+          "opening-hours": {
+            "page": {
+              "weekday": "",
+              "open": "",
+              "close": "",
+              "angular_common": "",
+              "angular_core": "",
+              "primeng_card": "",
+              "primeng_table": "",
+              "jsverse_transloco": "",
+              "services_admin_api_service": "",
+              "core_models_entities": "",
+              "app_opening_hours_page": "",
+              "opening_hours_page_html": ""
+            }
+          }
+        },
+        "rentals-today": {
+          "rentals-today": {
+            "page": {
+              "bike": "",
+              "user": "",
+              "from": "",
+              "to": "",
+              "status": "",
+              "actions": "",
+              "confirm": "",
+              "cancel": "",
+              "complete": "",
+              "angular_common": "",
+              "angular_core": "",
+              "primeng_button": "",
+              "primeng_card": "",
+              "primeng_table": "",
+              "jsverse_transloco": "",
+              "core_models_entities": "",
+              "services_rental_service": "",
+              "app_rentals_today_page": "",
+              "rentals_today_page_html": ""
+            }
+          }
+        },
+        "service-capacity": {
+          "service-capacity": {
+            "page": {
+              "weekday": "",
+              "capacity": "",
+              "angular_common": "",
+              "angular_core": "",
+              "primeng_card": "",
+              "primeng_table": "",
+              "jsverse_transloco": "",
+              "services_admin_api_service": "",
+              "core_models_entities": "",
+              "app_service_capacity_page": "",
+              "service_capacity_page_html": ""
+            }
+          }
+        }
+      },
+      "services": {
+        "admin-api": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "core_services_auth_service": "",
+            "root": ""
+          }
+        },
+        "rental": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "core_services_auth_service": "",
+            "root": "",
+            "status": ""
+          }
+        }
+      }
+    },
+    "app": {
+      "component": {
+        "karikaride": "",
+        "angular_core": "",
+        "angular_router": "",
+        "jsverse_transloco": "",
+        "angular_common": "",
+        "rxjs": "",
+        "primeng_api": "",
+        "primeng_menu": "",
+        "primeng_dialog": "",
+        "core_services_flag_service": "",
+        "core_i18n_languages": "",
+        "app_root": "",
+        "app_component_html": "",
+        "app_component_scss": "",
+        "admin": "",
+        "undefined": "",
+        "lang": ""
+      },
+      "routes": {
+        "angular_router": "",
+        "public": "",
+        "public_public_routes": "",
+        "admin": "",
+        "admin_admin_routes": "",
+        "pathmatch": "",
+        "redirectto": ""
+      }
+    },
+    "core": {
+      "guards": {
+        "auth": {
+          "guard": {
+            "angular_core": "",
+            "angular_router": "",
+            "services_auth_service": "",
+            "root": "",
+            "admin_login": ""
+          }
+        }
+      },
+      "i18n": {
+        "languages": {
+          "hu": "",
+          "magyar": "",
+          "de": "",
+          "deutsch": "",
+          "es": "",
+          "espa_ol": "",
+          "fr": "",
+          "fran_ais": "",
+          "ru": ""
+        }
+      },
+      "models": {
+        "entities": {
+          "men": "",
+          "women": "",
+          "children": "",
+          "active": "",
+          "inactive": "",
+          "confirmed": "",
+          "cancelled": "",
+          "completed": ""
+        }
+      },
+      "services": {
+        "auth": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "environments_environment": "",
+            "root": "",
+            "karikaride_token": ""
+          }
+        },
+        "flag": {
+          "service": {
+            "angular_core": "",
+            "root": ""
+          }
+        }
+      }
+    },
+    "public": {
+      "components": {
+        "bike-details": {
+          "bike-details": {
+            "component": {
+              "finalize_your_booking_details_and_confir": "",
+              "bike": "",
+              "dates": "",
+              "to": "",
+              "please_select_a_rental_period": "",
+              "jane_rider": "",
+              "36_30_123_4567": "",
+              "optional": "",
+              "angular_core": "",
+              "core_models_entities": "",
+              "shared_shared_imports": "",
+              "primeng_card": "",
+              "primeng_button": "",
+              "app_bike_details": "",
+              "bike_details_component_html": ""
+            }
+          }
+        },
+        "bike-list": {
+          "bike-list": {
+            "component": {
+              "size": "",
+              "angular_core": "",
+              "core_models_entities": "",
+              "primeng_card": "",
+              "angular_common": "",
+              "primeng_button": "",
+              "app_bike_list": "",
+              "bike_list_component_html": ""
+            }
+          }
+        },
+        "calendar": {
+          "calendar": {
+            "component": {
+              "select_rental_period": "",
+              "choose_start_and_end_date_with_time": "",
+              "confirm_dates": "",
+              "angular_common": "",
+              "angular_core": "",
+              "angular_forms": "",
+              "primeng_calendar": "",
+              "primeng_card": "",
+              "app_calendar": "",
+              "calendar_component_html": ""
+            }
+          }
+        },
+        "rental-stepper": {
+          "step1-select-date": {
+            "step1-select-date": {
+              "component": {
+                "angular_common": "",
+                "angular_core": "",
+                "angular_forms": "",
+                "jsverse_transloco": "",
+                "primeng_button": "",
+                "primeng_calendar": "",
+                "primeng_card": "",
+                "primeng_checkbox": "",
+                "primeng_message": "",
+                "core_models_rental_stepper": "",
+                "utils_storage_ttl": "",
+                "app_step1_select_date": "",
+                "step1_select_date_component_html": "",
+                "step1_select_date_component_scss": "",
+                "rental_step1": ""
+              }
+            }
+          },
+          "step2-select-needs": {
+            "step2-select-needs": {
+              "component": {
+                "v_laszd_ki_mire_van_sz_ks_ged": "",
+                "ll_tsd_be_a_biciklik_s_kieg_sz_t_k_sz_m_": "",
+                "f_rfi_ker_kp_r": "",
+                "n_i_ker_kp_r": "",
+                "gyermek_ker_kp_r": "",
+                "kieg_sz_t_k_opcion_lis": "",
+                "vissza": "",
+                "tov_bb": "",
+                "angular_common": "",
+                "angular_core": "",
+                "angular_forms": "",
+                "primeng_card": "",
+                "primeng_button": "",
+                "primeng_message": "",
+                "primeng_divider": "",
+                "core_models_rental_stepper": "",
+                "core_models_entities": "",
+                "app_step2_select_needs": "",
+                "step2_select_needs_component_html": "",
+                "step2_select_needs_component_scss": "",
+                "men": "",
+                "women": "",
+                "children": "",
+                "legal_bb_egy_ker_kp_rt_v_lassz_ki": ""
+              }
+            }
+          },
+          "step3-select-bikes": {
+            "step3-select-bikes": {
+              "component": {
+                "v_laszd_ki_a_konkr_t_bicikliket": "",
+                "maximum_annyit_jel_lhetsz_ki_amennyit_az": "",
+                "f_rfi_ker_kp_rok": "",
+                "n_i_ker_kp_rok": "",
+                "gyermek_ker_kp_rok": "",
+                "kieg_sz_t_k": "",
+                "sajnos_nincs_el_rhet_bringa_erre_az_id_p": "",
+                "k_r_nk_vedd_fel_vel_nk_a_kapcsolatot": "",
+                "vissza": "",
+                "foglal_s": "",
+                "vissza_a_kezd_lapra": "",
+                "angular_common": "",
+                "angular_core": "",
+                "angular_router": "",
+                "primeng_card": "",
+                "primeng_button": "",
+                "primeng_message": "",
+                "primeng_chip": "",
+                "core_models_entities": "",
+                "core_models_rental_stepper": "",
+                "app_step3_select_bikes": "",
+                "step3_select_bikes_component_html": "",
+                "step3_select_bikes_component_scss": "",
+                "men": "",
+                "women": "",
+                "children": ""
+              }
+            }
+          }
+        }
+      },
+      "pages": {
+        "contact": {
+          "contact": {
+            "page": {
+              "contact": "",
+              "reach_our_team_for_rentals_service_or_ge": "",
+              "we_d_love_to_hear_from_you": "",
+              "email_hello_64_karikaride_com": "",
+              "phone_36_30_123_4567": "",
+              "address_1031_budapest_bike_lane_12": "",
+              "send_an_email": "",
+              "angular_core": "",
+              "primeng_card": "",
+              "primeng_button": "",
+              "angular_common": "",
+              "app_contact_page": "",
+              "contact_page_html": ""
+            }
+          }
+        },
+        "rent-bike": {
+          "rent-bike": {
+            "page": {
+              "h_rom_l_p_sben_foglalhatsz_ker_kp_rt": "",
+              "angular_core": "",
+              "angular_common": "",
+              "primeng_steps": "",
+              "primeng_message": "",
+              "primeng_card": "",
+              "jsverse_transloco": "",
+              "components_rental_stepper_step1_select_d": "",
+              "components_rental_stepper_step2_select_n": "",
+              "components_rental_stepper_step3_select_b": "",
+              "core_models_entities": "",
+              "services_availability_service": "",
+              "services_bicycle_service": "",
+              "services_contact_service": "",
+              "core_models_rental_stepper": "",
+              "app_rent_bike": "",
+              "rent_bike_page_html": "",
+              "id_pont": "",
+              "sz_ks_gletek": "",
+              "biciklik": "",
+              "not_enough_bikes": "",
+              "sajnos_nincs_el_rhet_bringa_erre_az_id_p": ""
+            }
+          }
+        },
+        "service-booking": {
+          "service-booking": {
+            "page": {
+              "schedule_workshop_support_in_two_quick_s": "",
+              "step_1_select_date": "",
+              "step_2_your_info": "",
+              "full_name": "",
+              "phone": "",
+              "what_do_you_need_help_with": "",
+              "angular_core": "",
+              "shared_shared_imports": "",
+              "jsverse_transloco": "",
+              "primeng_card": "",
+              "primeng_button": "",
+              "services_service_booking_service": "",
+              "app_service_booking": "",
+              "service_booking_page_html": "",
+              "service_booking_submitted": ""
+            }
+          }
+        }
+      },
+      "public": {
+        "routes": {
+          "angular_router": "",
+          "pages_rent_bike_rent_bike_page": "",
+          "pages_service_booking_service_booking_pa": "",
+          "pages_contact_contact_page": "",
+          "service": "",
+          "contact": ""
+        }
+      },
+      "services": {
+        "availability": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "core_models_rental_stepper": "",
+            "root": "",
+            "from": "",
+            "to": ""
+          }
+        },
+        "bicycle": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "root": "",
+            "categoryid": ""
+          }
+        },
+        "category": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "root": ""
+          }
+        },
+        "contact": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "environments_environment": "",
+            "core_models_rental_stepper": "",
+            "root": ""
+          }
+        },
+        "rental": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "root": "",
+            "status": ""
+          }
+        },
+        "service-booking": {
+          "service": {
+            "angular_core": "",
+            "angular_common_http": "",
+            "rxjs": "",
+            "core_models_entities": "",
+            "environments_environment": "",
+            "root": "",
+            "date": "",
+            "id": ""
+          }
+        }
+      },
+      "utils": {
+        "storage-ttl": {
+          "failed_to_save_to_localstorage": "",
+          "failed_to_load_from_localstorage": ""
+        }
+      }
+    },
+    "shared": {
+      "shared-imports": {
+        "angular_common": "",
+        "angular_forms": "",
+        "jsverse_transloco": "",
+        "primeng_button": "",
+        "primeng_calendar": "",
+        "primeng_card": "",
+        "primeng_dropdown": "",
+        "primeng_inputtext": "",
+        "primeng_inputtextarea": "",
+        "primeng_table": ""
+      }
+    },
+    "transloco": {
+      "config": {
+        "angular_common_http": "",
+        "angular_core": "",
+        "jsverse_transloco": "",
+        "rxjs": "",
+        "environments_environment": "",
+        "root": "",
+        "en": "",
+        "hu": "",
+        "de": "",
+        "es": "",
+        "fr": "",
+        "ru": ""
+      }
+    }
   }
 }
