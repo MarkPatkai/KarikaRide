@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/karikaride",
             "index": "src/index.html",
@@ -28,6 +28,11 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            },
             "production": {
               "budgets": [
                 {
@@ -44,18 +49,20 @@
               ],
               "outputHashing": "all"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "buildTarget": "karikaride:build"
-          },
           "configurations": {
+            "development": {
+              "buildTarget": "karikaride:build:development"
+            },
             "production": {
               "buildTarget": "karikaride:build:production"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
