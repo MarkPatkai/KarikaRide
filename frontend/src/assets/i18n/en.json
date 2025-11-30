@@ -1,0 +1,70 @@
+{
+  "shared": {
+    "title": "KarikaRide"
+  },
+  "public": {
+    "nav": {
+      "rent": "Rent a bike",
+      "service": "Service booking"
+    },
+    "filters": {
+      "category": "Category",
+      "dates": "Rental dates"
+    },
+    "renter": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "cta": {
+      "book": "Book rental",
+      "submit": "Submit request"
+    },
+    "serviceBooking": {
+      "title": "Workshop booking",
+      "date": "Preferred date",
+      "description": "Issue description",
+      "remaining": "Remaining slots"
+    }
+  },
+  "admin": {
+    "nav": {
+      "dashboard": "Admin"
+    },
+    "login": {
+      "title": "Admin login",
+      "submit": "Sign in"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Quick links to daily operations"
+    },
+    "forms": {
+      "name": "Name",
+      "category": "Category",
+      "status": "Status",
+      "description": "Description",
+      "priceHour": "Price / hour",
+      "priceDay": "Price / day",
+      "save": "Save"
+    },
+    "bicycles": {
+      "title": "Bicycles"
+    },
+    "categories": {
+      "title": "Categories"
+    },
+    "accessories": {
+      "title": "Accessories"
+    },
+    "rentals": {
+      "title": "Today's rentals"
+    },
+    "openingHours": {
+      "title": "Opening hours"
+    },
+    "serviceCapacity": {
+      "title": "Service capacity"
+    }
+  }
+}

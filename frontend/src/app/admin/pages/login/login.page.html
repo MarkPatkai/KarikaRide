@@ -1,0 +1,15 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'admin.login.title' | transloco }}</ng-template>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12">
+      <label>Email</label>
+      <input pInputText [(ngModel)]="form.email" />
+    </div>
+    <div class="p-field p-col-12">
+      <label>Password</label>
+      <input pInputText type="password" [(ngModel)]="form.password" />
+    </div>
+  </div>
+  <button pButton type="button" label="{{ 'admin.login.submit' | transloco }}" (click)="submit()"></button>
+  <p *ngIf="error" class="p-error">{{ error }}</p>
+</p-card>

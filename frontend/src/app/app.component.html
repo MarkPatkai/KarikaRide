@@ -1,0 +1,12 @@
+<div class="app-shell">
+  <header>
+    <h1 class="page-title">{{ 'shared.title' | transloco }}</h1>
+    <nav>
+      <a routerLink="/public" class="app-link">{{ 'public.nav.rent' | transloco }}</a>
+      <a routerLink="/public/service" class="app-link">{{ 'public.nav.service' | transloco }}</a>
+      <a routerLink="/admin" class="app-link">{{ 'admin.nav.dashboard' | transloco }}</a>
+    </nav>
+    <hr />
+  </header>
+  <router-outlet></router-outlet>
+</div>

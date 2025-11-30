@@ -1,0 +1,26 @@
+<p-card>
+  <ng-template pTemplate="title">{{ 'public.serviceBooking.title' | transloco }}</ng-template>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'public.serviceBooking.date' | transloco }}</label>
+      <p-calendar [(ngModel)]="date" (onSelect)="onDateChange($event)"></p-calendar>
+      <div *ngIf="capacityInfo">
+        {{ 'public.serviceBooking.remaining' | transloco }}: {{ capacityInfo.remaining }} / {{ capacityInfo.capacity }}
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'public.renter.name' | transloco }}</label>
+      <input pInputText [(ngModel)]="form.name" />
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label>{{ 'public.renter.phone' | transloco }}</label>
+      <input pInputText [(ngModel)]="form.phone" />
+    </div>
+    <div class="p-field p-col-12">
+      <label>{{ 'public.serviceBooking.description' | transloco }}</label>
+      <textarea pInputTextarea rows="3" [(ngModel)]="form.description"></textarea>
+    </div>
+  </div>
+  <button pButton type="button" label="{{ 'public.cta.submit' | transloco }}" (click)="submit()"></button>
+  <p *ngIf="message">{{ message }}</p>
+</p-card>
