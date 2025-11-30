@@ -18,7 +18,7 @@ INSERT INTO accessories (name, price, description, image_url) VALUES
   ('Child Seat', 7.50, 'Rear child seat with harness.', 'https://example.com/accessories/child-seat.jpg');
 
 INSERT INTO rentals (bicycle_id, user_name, user_phone, user_email, from_datetime, to_datetime, status) VALUES
-  (1, 'Alice Demo', '+1234567890', 'alice@example.com', DATE_ADD(NOW(), INTERVAL 1 DAY), DATE_ADD(NOW(), INTERVAL 1 DAY + INTERVAL 2 HOUR), 'confirmed');
+  (1, 'Alice Demo', '+1234567890', 'alice@example.com', DATE_ADD(NOW(), INTERVAL 1 DAY), DATE_ADD(DATE_ADD(NOW(), INTERVAL 1 DAY), INTERVAL 2 HOUR), 'confirmed');
 
 INSERT INTO opening_hours (weekday, open_time, close_time) VALUES
   (0, '09:00', '18:00'),
