@@ -5,3 +5,63 @@
 .logout:hover {
   color: #ffffff;
 }
+
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 18px;
+  border-radius: 3px;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.flag-large {
+  width: 48px;
+  height: 36px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.lang-option {
+  padding: 12px;
+  border: 1px solid #e5ecf7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.lang-option:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

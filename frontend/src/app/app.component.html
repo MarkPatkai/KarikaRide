@@ -2,22 +2,35 @@
   <ng-container *ngIf="!isAdminRoute; else adminLayout">
     <header class="top-nav">
       <div class="container top-nav-inner">
-        <div class="brand">
-          <div class="brand-mark">K</div>
-          <div>
-            <div>KarikaRide</div>
-            <small>{{ 'shared.title' | transloco }}</small>
-          </div>
+      <div class="brand">
+        <div class="brand-mark">K</div>
+        <div>
+          <div>KarikaRide</div>
+          <small>{{ 'shared.title' | transloco }}</small>
         </div>
-        <nav class="nav-links">
-          <a routerLink="/public" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-            {{ 'public.nav.rent' | transloco }}
-          </a>
-          <a routerLink="/public/service" routerLinkActive="active">{{ 'public.nav.service' | transloco }}</a>
-          <a routerLink="/public/contact" routerLinkActive="active">{{ 'public.nav.contact' | transloco }}</a>
-        </nav>
       </div>
-    </header>
+      <nav class="nav-links">
+        <a routerLink="/public" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          {{ 'public.nav.rent' | transloco }}
+        </a>
+        <a routerLink="/public/service" routerLinkActive="active">{{ 'public.nav.service' | transloco }}</a>
+        <a routerLink="/public/contact" routerLinkActive="active">{{ 'public.nav.contact' | transloco }}</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-selector" (click)="menu.toggle($event)">
+          <img [src]="currentFlagUrl" class="flag-icon" />
+          <p-menu #menu [model]="languageItems" [popup]="true">
+            <ng-template pTemplate="item" let-item>
+              <a class="p-menuitem-link" (click)="item.command?.($event)">
+                <img [src]="item.flag" class="flag-icon" />
+                <span class="p-menuitem-text">{{ item.label }}</span>
+              </a>
+            </ng-template>
+          </p-menu>
+        </div>
+      </div>
+    </div>
+  </header>
 
     <main class="container page-container">
       <router-outlet></router-outlet>
@@ -31,18 +44,18 @@
           <div class="brand-mark">A</div>
           <div>
             <div>KarikaRide</div>
-            <small>Admin Console</small>
+            <small>{{ 'admin.nav.console' | transloco }}</small>
           </div>
         </div>
         <nav class="admin-nav">
-          <a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
-          <a routerLink="/admin/bicycles" routerLinkActive="active">Bicycles</a>
-          <a routerLink="/admin/categories" routerLinkActive="active">Categories</a>
-          <a routerLink="/admin/accessories" routerLinkActive="active">Accessories</a>
-          <a routerLink="/admin/rentals" routerLinkActive="active">Rentals Today</a>
-          <a routerLink="/admin/opening-hours" routerLinkActive="active">Opening Hours</a>
-          <a routerLink="/admin/service-capacity" routerLinkActive="active">Service Capacity</a>
-          <a routerLink="/admin/login" class="logout">Logout</a>
+          <a routerLink="/admin/dashboard" routerLinkActive="active">{{ 'admin.dashboard.title' | transloco }}</a>
+          <a routerLink="/admin/bicycles" routerLinkActive="active">{{ 'admin.bicycles.title' | transloco }}</a>
+          <a routerLink="/admin/categories" routerLinkActive="active">{{ 'admin.categories.title' | transloco }}</a>
+          <a routerLink="/admin/accessories" routerLinkActive="active">{{ 'admin.accessories.title' | transloco }}</a>
+          <a routerLink="/admin/rentals" routerLinkActive="active">{{ 'admin.rentals.title' | transloco }}</a>
+          <a routerLink="/admin/opening-hours" routerLinkActive="active">{{ 'admin.openingHours.title' | transloco }}</a>
+          <a routerLink="/admin/service-capacity" routerLinkActive="active">{{ 'admin.serviceCapacity.title' | transloco }}</a>
+          <a routerLink="/admin/login" class="logout">{{ 'admin.nav.logout' | transloco }}</a>
         </nav>
       </aside>
       <main class="admin-content">
@@ -53,3 +66,19 @@
     </div>
   </ng-template>
 </div>
+
+<p-dialog
+  [(visible)]="showLangModal"
+  [modal]="true"
+  [closable]="false"
+  [style]="{ width: '90vw', height: '90vh' }"
+>
+  <h2>{{ 'language.select_title' | transloco }}</h2>
+
+  <div class="language-grid">
+    <div class="lang-option" *ngFor="let lang of languages" (click)="chooseLanguage(lang.code)">
+      <img [src]="flagService.getFlagUrl(lang.code)" class="flag-large" />
+      <span>{{ lang.name }}</span>
+    </div>
+  </div>
+</p-dialog>

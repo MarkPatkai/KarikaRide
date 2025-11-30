@@ -1,0 +1,2082 @@
+[
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.core_guards_auth_guard",
+    "text": "../core/guards/auth.guard"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_accessory_crud_accessory_crud_page",
+    "text": "./pages/accessory-crud/accessory-crud.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_bicycle_crud_bicycle_crud_page",
+    "text": "./pages/bicycle-crud/bicycle-crud.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_category_crud_category_crud_page",
+    "text": "./pages/category-crud/category-crud.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_dashboard_dashboard_page",
+    "text": "./pages/dashboard/dashboard.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_login_login_page",
+    "text": "./pages/login/login.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_opening_hours_opening_hours_page",
+    "text": "./pages/opening-hours/opening-hours.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_rentals_today_rentals_today_page",
+    "text": "./pages/rentals-today/rentals-today.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pages_service_capacity_service_capacity_",
+    "text": "./pages/service-capacity/service-capacity.page"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.login",
+    "text": "login"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.redirectto",
+    "text": ", redirectTo:"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.pathmatch",
+    "text": ", pathMatch:"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.dashboard",
+    "text": "dashboard"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.bicycles",
+    "text": "bicycles"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.categories",
+    "text": "categories"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.accessories",
+    "text": "accessories"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.rentals",
+    "text": "rentals"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.opening_hours",
+    "text": "opening-hours"
+  },
+  {
+    "file": "src/app/admin/admin.routes.ts",
+    "key": "app.admin.admin.routes.service_capacity",
+    "text": "service-capacity"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.html",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.name",
+    "text": "Name"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.html",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.price",
+    "text": "Price"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.services_admin_api_service",
+    "text": "../../services/admin-api.service"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.app_accessory_crud_page",
+    "text": "app-accessory-crud-page"
+  },
+  {
+    "file": "src/app/admin/pages/accessory-crud/accessory-crud.page.ts",
+    "key": "app.admin.pages.accessory-crud.accessory-crud.page.accessory_crud_page_html",
+    "text": "./accessory-crud.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.html",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.name",
+    "text": "Name"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.html",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.category",
+    "text": "Category"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.html",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.status",
+    "text": "Status"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.shared_shared_imports",
+    "text": "../../../shared/shared-imports"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.primeng_dropdown",
+    "text": "primeng/dropdown"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.services_admin_api_service",
+    "text": "../../services/admin-api.service"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.app_bicycle_crud_page",
+    "text": "app-bicycle-crud-page"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.bicycle_crud_page_html",
+    "text": "./bicycle-crud.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/bicycle-crud/bicycle-crud.page.ts",
+    "key": "app.admin.pages.bicycle-crud.bicycle-crud.page.active",
+    "text": "active"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.html",
+    "key": "app.admin.pages.category-crud.category-crud.page.name",
+    "text": "Name"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.html",
+    "key": "app.admin.pages.category-crud.category-crud.page.hour",
+    "text": "Hour"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.html",
+    "key": "app.admin.pages.category-crud.category-crud.page.day",
+    "text": "Day"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.shared_shared_imports",
+    "text": "../../../shared/shared-imports"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.services_admin_api_service",
+    "text": "../../services/admin-api.service"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.app_category_crud_page",
+    "text": "app-category-crud-page"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.category_crud_page_html",
+    "text": "./category-crud.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/category-crud/category-crud.page.ts",
+    "key": "app.admin.pages.category-crud.category-crud.page.priceday_0_pricehour_0_description",
+    "text": ", priceDay: 0, priceHour: 0, description:"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.app_dashboard_page",
+    "text": "app-dashboard-page"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.dashboard_page_html",
+    "text": "./dashboard.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.bicycles_available",
+    "text": "Bicycles Available"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.services_booked",
+    "text": "Services Booked"
+  },
+  {
+    "file": "src/app/admin/pages/dashboard/dashboard.page.ts",
+    "key": "app.admin.pages.dashboard.dashboard.page.overdue_returns",
+    "text": "Overdue Returns"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.html",
+    "key": "app.admin.pages.login.login.page.email",
+    "text": "Email"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.html",
+    "key": "app.admin.pages.login.login.page.password",
+    "text": "Password"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.shared_shared_imports",
+    "text": "../../../shared/shared-imports"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.core_services_auth_service",
+    "text": "../../../core/services/auth.service"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.app_login_page",
+    "text": "app-login-page"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.login_page_html",
+    "text": "./login.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.admin_dashboard",
+    "text": "/admin/dashboard"
+  },
+  {
+    "file": "src/app/admin/pages/login/login.page.ts",
+    "key": "app.admin.pages.login.login.page.login_failed",
+    "text": "Login failed"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.html",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.weekday",
+    "text": "Weekday"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.html",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.open",
+    "text": "Open"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.html",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.close",
+    "text": "Close"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.services_admin_api_service",
+    "text": "../../services/admin-api.service"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.app_opening_hours_page",
+    "text": "app-opening-hours-page"
+  },
+  {
+    "file": "src/app/admin/pages/opening-hours/opening-hours.page.ts",
+    "key": "app.admin.pages.opening-hours.opening-hours.page.opening_hours_page_html",
+    "text": "./opening-hours.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.bike",
+    "text": "Bike"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.user",
+    "text": "User"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.from",
+    "text": "From"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.to",
+    "text": "To"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.status",
+    "text": "Status"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.actions",
+    "text": "Actions"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.confirm",
+    "text": "Confirm"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.cancel",
+    "text": "Cancel"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.html",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.complete",
+    "text": "Complete"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.services_rental_service",
+    "text": "../../services/rental.service"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.app_rentals_today_page",
+    "text": "app-rentals-today-page"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.rentals_today_page_html",
+    "text": "./rentals-today.page.html"
+  },
+  {
+    "file": "src/app/admin/pages/rentals-today/rentals-today.page.ts",
+    "key": "app.admin.pages.rentals-today.rentals-today.page.status",
+    "text": "status"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.html",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.weekday",
+    "text": "Weekday"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.html",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.capacity",
+    "text": "Capacity"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.services_admin_api_service",
+    "text": "../../services/admin-api.service"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.app_service_capacity_page",
+    "text": "app-service-capacity-page"
+  },
+  {
+    "file": "src/app/admin/pages/service-capacity/service-capacity.page.ts",
+    "key": "app.admin.pages.service-capacity.service-capacity.page.service_capacity_page_html",
+    "text": "./service-capacity.page.html"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.core_services_auth_service",
+    "text": "../../core/services/auth.service"
+  },
+  {
+    "file": "src/app/admin/services/admin-api.service.ts",
+    "key": "app.admin.services.admin-api.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.core_services_auth_service",
+    "text": "../../core/services/auth.service"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/admin/services/rental.service.ts",
+    "key": "app.admin.services.rental.service.status",
+    "text": "status"
+  },
+  {
+    "file": "src/app/app.component.html",
+    "key": "app.app.component.karikaride",
+    "text": "KarikaRide"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.primeng_api",
+    "text": "primeng/api"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.primeng_menu",
+    "text": "primeng/menu"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.primeng_dialog",
+    "text": "primeng/dialog"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.core_services_flag_service",
+    "text": "./core/services/flag.service"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.core_i18n_languages",
+    "text": "./core/i18n/languages"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.app_root",
+    "text": "app-root"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.app_component_html",
+    "text": "./app.component.html"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.app_component_scss",
+    "text": "./app.component.scss"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.karikaride",
+    "text": "KarikaRide"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.admin",
+    "text": "/admin"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.undefined",
+    "text": "undefined"
+  },
+  {
+    "file": "src/app/app.component.ts",
+    "key": "app.app.component.lang",
+    "text": "lang"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.public",
+    "text": "public"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.public_public_routes",
+    "text": "./public/public.routes"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.admin",
+    "text": "admin"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.admin_admin_routes",
+    "text": "./admin/admin.routes"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.pathmatch",
+    "text": ", pathMatch:"
+  },
+  {
+    "file": "src/app/app.routes.ts",
+    "key": "app.app.routes.redirectto",
+    "text": ", redirectTo:"
+  },
+  {
+    "file": "src/app/core/guards/auth.guard.ts",
+    "key": "app.core.guards.auth.guard.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/core/guards/auth.guard.ts",
+    "key": "app.core.guards.auth.guard.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/core/guards/auth.guard.ts",
+    "key": "app.core.guards.auth.guard.services_auth_service",
+    "text": "../services/auth.service"
+  },
+  {
+    "file": "src/app/core/guards/auth.guard.ts",
+    "key": "app.core.guards.auth.guard.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/core/guards/auth.guard.ts",
+    "key": "app.core.guards.auth.guard.admin_login",
+    "text": "/admin/login"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.hu",
+    "text": "hu"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.magyar",
+    "text": "Magyar"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.de",
+    "text": "de"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.deutsch",
+    "text": "Deutsch"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.es",
+    "text": "es"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.espa_ol",
+    "text": "Español"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.fr",
+    "text": "fr"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.fran_ais",
+    "text": "Français"
+  },
+  {
+    "file": "src/app/core/i18n/languages.ts",
+    "key": "app.core.i18n.languages.ru",
+    "text": "ru"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.men",
+    "text": "men"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.women",
+    "text": "women"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.children",
+    "text": "children"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.active",
+    "text": "active"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.inactive",
+    "text": "inactive"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.confirmed",
+    "text": "confirmed"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.cancelled",
+    "text": "cancelled"
+  },
+  {
+    "file": "src/app/core/models/entities.ts",
+    "key": "app.core.models.entities.completed",
+    "text": "completed"
+  },
+  {
+    "file": "src/app/core/services/auth.service.ts",
+    "key": "app.core.services.auth.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/core/services/auth.service.ts",
+    "key": "app.core.services.auth.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/core/services/auth.service.ts",
+    "key": "app.core.services.auth.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/core/services/auth.service.ts",
+    "key": "app.core.services.auth.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/core/services/auth.service.ts",
+    "key": "app.core.services.auth.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/core/services/auth.service.ts",
+    "key": "app.core.services.auth.service.karikaride_token",
+    "text": "karikaride_token"
+  },
+  {
+    "file": "src/app/core/services/flag.service.ts",
+    "key": "app.core.services.flag.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/core/services/flag.service.ts",
+    "key": "app.core.services.flag.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.finalize_your_booking_details_and_confir",
+    "text": "Finalize your booking details and confirm your ride."
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.bike",
+    "text": "Bike"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.dates",
+    "text": "Dates"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.to",
+    "text": "to"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.please_select_a_rental_period",
+    "text": "Please select a rental period"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.jane_rider",
+    "text": "Jane Rider"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.36_30_123_4567",
+    "text": "+36 30 123 4567"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.html",
+    "key": "app.public.components.bike-details.bike-details.component.optional",
+    "text": "Optional"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.shared_shared_imports",
+    "text": "../../../shared/shared-imports"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.app_bike_details",
+    "text": "app-bike-details"
+  },
+  {
+    "file": "src/app/public/components/bike-details/bike-details.component.ts",
+    "key": "app.public.components.bike-details.bike-details.component.bike_details_component_html",
+    "text": "./bike-details.component.html"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.html",
+    "key": "app.public.components.bike-list.bike-list.component.size",
+    "text": "Size:"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.app_bike_list",
+    "text": "app-bike-list"
+  },
+  {
+    "file": "src/app/public/components/bike-list/bike-list.component.ts",
+    "key": "app.public.components.bike-list.bike-list.component.bike_list_component_html",
+    "text": "./bike-list.component.html"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.html",
+    "key": "app.public.components.calendar.calendar.component.select_rental_period",
+    "text": "Select rental period"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.html",
+    "key": "app.public.components.calendar.calendar.component.choose_start_and_end_date_with_time",
+    "text": "Choose start and end date with time."
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.html",
+    "key": "app.public.components.calendar.calendar.component.confirm_dates",
+    "text": "Confirm Dates"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.angular_forms",
+    "text": "@angular/forms"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.primeng_calendar",
+    "text": "primeng/calendar"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.app_calendar",
+    "text": "app-calendar"
+  },
+  {
+    "file": "src/app/public/components/calendar/calendar.component.ts",
+    "key": "app.public.components.calendar.calendar.component.calendar_component_html",
+    "text": "./calendar.component.html"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.angular_forms",
+    "text": "@angular/forms"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.primeng_calendar",
+    "text": "primeng/calendar"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.primeng_checkbox",
+    "text": "primeng/checkbox"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.primeng_message",
+    "text": "primeng/message"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.core_models_rental_stepper",
+    "text": "../../../../core/models/rental-stepper"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.utils_storage_ttl",
+    "text": "../../../utils/storage-ttl"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.app_step1_select_date",
+    "text": "app-step1-select-date"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.step1_select_date_component_html",
+    "text": "./step1-select-date.component.html"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.step1_select_date_component_scss",
+    "text": "./step1-select-date.component.scss"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step1-select-date/step1-select-date.component.ts",
+    "key": "app.public.components.rental-stepper.step1-select-date.step1-select-date.component.rental_step1",
+    "text": "rental_step1"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.v_laszd_ki_mire_van_sz_ks_ged",
+    "text": "Válaszd ki, mire van szükséged"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.ll_tsd_be_a_biciklik_s_kieg_sz_t_k_sz_m_",
+    "text": "Állítsd be a biciklik és kiegészítők számát."
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.f_rfi_ker_kp_r",
+    "text": "Férfi kerékpár"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.n_i_ker_kp_r",
+    "text": "Női kerékpár"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.gyermek_ker_kp_r",
+    "text": "Gyermek kerékpár"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.kieg_sz_t_k_opcion_lis",
+    "text": "Kiegészítők (opcionális)"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.vissza",
+    "text": "Vissza"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.html",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.tov_bb",
+    "text": "Tovább"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.angular_forms",
+    "text": "@angular/forms"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.primeng_message",
+    "text": "primeng/message"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.primeng_divider",
+    "text": "primeng/divider"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.core_models_rental_stepper",
+    "text": "../../../../core/models/rental-stepper"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.core_models_entities",
+    "text": "../../../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.app_step2_select_needs",
+    "text": "app-step2-select-needs"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.step2_select_needs_component_html",
+    "text": "./step2-select-needs.component.html"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.step2_select_needs_component_scss",
+    "text": "./step2-select-needs.component.scss"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.men",
+    "text": "men"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.women",
+    "text": "women"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.children",
+    "text": "children"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step2-select-needs/step2-select-needs.component.ts",
+    "key": "app.public.components.rental-stepper.step2-select-needs.step2-select-needs.component.legal_bb_egy_ker_kp_rt_v_lassz_ki",
+    "text": "Legalább egy kerékpárt válassz ki."
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.v_laszd_ki_a_konkr_t_bicikliket",
+    "text": "Válaszd ki a konkrét bicikliket"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.maximum_annyit_jel_lhetsz_ki_amennyit_az",
+    "text": "Maximum annyit jelölhetsz ki, amennyit az előző lépésben megadtál."
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.f_rfi_ker_kp_rok",
+    "text": "Férfi kerékpárok"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.n_i_ker_kp_rok",
+    "text": "Női kerékpárok"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.gyermek_ker_kp_rok",
+    "text": "Gyermek kerékpárok"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.kieg_sz_t_k",
+    "text": "Kiegészítők"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.sajnos_nincs_el_rhet_bringa_erre_az_id_p",
+    "text": "Sajnos nincs elérhető bringa erre az időpontra!"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.k_r_nk_vedd_fel_vel_nk_a_kapcsolatot",
+    "text": "Kérünk, vedd fel velünk a kapcsolatot."
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.vissza",
+    "text": "Vissza"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.foglal_s",
+    "text": "Foglalás"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.html",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.vissza_a_kezd_lapra",
+    "text": "Vissza a kezdőlapra"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.primeng_message",
+    "text": "primeng/message"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.primeng_chip",
+    "text": "primeng/chip"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.core_models_entities",
+    "text": "../../../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.core_models_rental_stepper",
+    "text": "../../../../core/models/rental-stepper"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.app_step3_select_bikes",
+    "text": "app-step3-select-bikes"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.step3_select_bikes_component_html",
+    "text": "./step3-select-bikes.component.html"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.step3_select_bikes_component_scss",
+    "text": "./step3-select-bikes.component.scss"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.men",
+    "text": "men"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.women",
+    "text": "women"
+  },
+  {
+    "file": "src/app/public/components/rental-stepper/step3-select-bikes/step3-select-bikes.component.ts",
+    "key": "app.public.components.rental-stepper.step3-select-bikes.step3-select-bikes.component.children",
+    "text": "children"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.contact",
+    "text": "Contact"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.reach_our_team_for_rentals_service_or_ge",
+    "text": "Reach our team for rentals, service, or general questions."
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.we_d_love_to_hear_from_you",
+    "text": "We'd love to hear from you"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.email_hello_64_karikaride_com",
+    "text": "Email: hello&#64;karikaride.com"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.phone_36_30_123_4567",
+    "text": "Phone: +36 30 123 4567"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.address_1031_budapest_bike_lane_12",
+    "text": "Address: 1031 Budapest, Bike Lane 12."
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.html",
+    "key": "app.public.pages.contact.contact.page.send_an_email",
+    "text": "Send an email"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.ts",
+    "key": "app.public.pages.contact.contact.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.ts",
+    "key": "app.public.pages.contact.contact.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.ts",
+    "key": "app.public.pages.contact.contact.page.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.ts",
+    "key": "app.public.pages.contact.contact.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.ts",
+    "key": "app.public.pages.contact.contact.page.app_contact_page",
+    "text": "app-contact-page"
+  },
+  {
+    "file": "src/app/public/pages/contact/contact.page.ts",
+    "key": "app.public.pages.contact.contact.page.contact_page_html",
+    "text": "./contact.page.html"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.html",
+    "key": "app.public.pages.rent-bike.rent-bike.page.h_rom_l_p_sben_foglalhatsz_ker_kp_rt",
+    "text": "Három lépésben foglalhatsz kerékpárt."
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.primeng_steps",
+    "text": "primeng/steps"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.primeng_message",
+    "text": "primeng/message"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.components_rental_stepper_step1_select_d",
+    "text": "../../components/rental-stepper/step1-select-date/step1-select-date.component"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.components_rental_stepper_step2_select_n",
+    "text": "../../components/rental-stepper/step2-select-needs/step2-select-needs.component"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.components_rental_stepper_step3_select_b",
+    "text": "../../components/rental-stepper/step3-select-bikes/step3-select-bikes.component"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.core_models_entities",
+    "text": "../../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.services_availability_service",
+    "text": "../../services/availability.service"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.services_bicycle_service",
+    "text": "../../services/bicycle.service"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.services_contact_service",
+    "text": "../../services/contact.service"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.core_models_rental_stepper",
+    "text": "../../../core/models/rental-stepper"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.app_rent_bike",
+    "text": "app-rent-bike"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.rent_bike_page_html",
+    "text": "./rent-bike.page.html"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.id_pont",
+    "text": "Időpont"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.sz_ks_gletek",
+    "text": "Szükségletek"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.biciklik",
+    "text": "Biciklik"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.not_enough_bikes",
+    "text": "not enough bikes"
+  },
+  {
+    "file": "src/app/public/pages/rent-bike/rent-bike.page.ts",
+    "key": "app.public.pages.rent-bike.rent-bike.page.sajnos_nincs_el_rhet_bringa_erre_az_id_p",
+    "text": "Sajnos nincs elérhető bringa erre az időpontra!"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.html",
+    "key": "app.public.pages.service-booking.service-booking.page.schedule_workshop_support_in_two_quick_s",
+    "text": "Schedule workshop support in two quick steps."
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.html",
+    "key": "app.public.pages.service-booking.service-booking.page.step_1_select_date",
+    "text": "Step 1: Select Date"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.html",
+    "key": "app.public.pages.service-booking.service-booking.page.step_2_your_info",
+    "text": "Step 2: Your Info"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.html",
+    "key": "app.public.pages.service-booking.service-booking.page.full_name",
+    "text": "Full name"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.html",
+    "key": "app.public.pages.service-booking.service-booking.page.phone",
+    "text": "Phone"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.html",
+    "key": "app.public.pages.service-booking.service-booking.page.what_do_you_need_help_with",
+    "text": "What do you need help with?"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.shared_shared_imports",
+    "text": "../../../shared/shared-imports"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.services_service_booking_service",
+    "text": "../../services/service-booking.service"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.app_service_booking",
+    "text": "app-service-booking"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.service_booking_page_html",
+    "text": "./service-booking.page.html"
+  },
+  {
+    "file": "src/app/public/pages/service-booking/service-booking.page.ts",
+    "key": "app.public.pages.service-booking.service-booking.page.service_booking_submitted",
+    "text": "Service booking submitted"
+  },
+  {
+    "file": "src/app/public/public.routes.ts",
+    "key": "app.public.public.routes.angular_router",
+    "text": "@angular/router"
+  },
+  {
+    "file": "src/app/public/public.routes.ts",
+    "key": "app.public.public.routes.pages_rent_bike_rent_bike_page",
+    "text": "./pages/rent-bike/rent-bike.page"
+  },
+  {
+    "file": "src/app/public/public.routes.ts",
+    "key": "app.public.public.routes.pages_service_booking_service_booking_pa",
+    "text": "./pages/service-booking/service-booking.page"
+  },
+  {
+    "file": "src/app/public/public.routes.ts",
+    "key": "app.public.public.routes.pages_contact_contact_page",
+    "text": "./pages/contact/contact.page"
+  },
+  {
+    "file": "src/app/public/public.routes.ts",
+    "key": "app.public.public.routes.service",
+    "text": "service"
+  },
+  {
+    "file": "src/app/public/public.routes.ts",
+    "key": "app.public.public.routes.contact",
+    "text": "contact"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.core_models_rental_stepper",
+    "text": "../../core/models/rental-stepper"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.from",
+    "text": "from"
+  },
+  {
+    "file": "src/app/public/services/availability.service.ts",
+    "key": "app.public.services.availability.service.to",
+    "text": "to"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/services/bicycle.service.ts",
+    "key": "app.public.services.bicycle.service.categoryid",
+    "text": "categoryId"
+  },
+  {
+    "file": "src/app/public/services/category.service.ts",
+    "key": "app.public.services.category.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/services/category.service.ts",
+    "key": "app.public.services.category.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/public/services/category.service.ts",
+    "key": "app.public.services.category.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/public/services/category.service.ts",
+    "key": "app.public.services.category.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/services/category.service.ts",
+    "key": "app.public.services.category.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/public/services/category.service.ts",
+    "key": "app.public.services.category.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/services/contact.service.ts",
+    "key": "app.public.services.contact.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/services/contact.service.ts",
+    "key": "app.public.services.contact.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/public/services/contact.service.ts",
+    "key": "app.public.services.contact.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/public/services/contact.service.ts",
+    "key": "app.public.services.contact.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/public/services/contact.service.ts",
+    "key": "app.public.services.contact.service.core_models_rental_stepper",
+    "text": "../../core/models/rental-stepper"
+  },
+  {
+    "file": "src/app/public/services/contact.service.ts",
+    "key": "app.public.services.contact.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/services/rental.service.ts",
+    "key": "app.public.services.rental.service.status",
+    "text": "status"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.core_models_entities",
+    "text": "../../core/models/entities"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.environments_environment",
+    "text": "../../../environments/environment"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.date",
+    "text": "date"
+  },
+  {
+    "file": "src/app/public/services/service-booking.service.ts",
+    "key": "app.public.services.service-booking.service.id",
+    "text": "id"
+  },
+  {
+    "file": "src/app/public/utils/storage-ttl.ts",
+    "key": "app.public.utils.storage-ttl.failed_to_save_to_localstorage",
+    "text": "Failed to save to localStorage"
+  },
+  {
+    "file": "src/app/public/utils/storage-ttl.ts",
+    "key": "app.public.utils.storage-ttl.failed_to_load_from_localstorage",
+    "text": "Failed to load from localStorage"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.angular_common",
+    "text": "@angular/common"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.angular_forms",
+    "text": "@angular/forms"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_button",
+    "text": "primeng/button"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_calendar",
+    "text": "primeng/calendar"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_card",
+    "text": "primeng/card"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_dropdown",
+    "text": "primeng/dropdown"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_inputtext",
+    "text": "primeng/inputtext"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_inputtextarea",
+    "text": "primeng/inputtextarea"
+  },
+  {
+    "file": "src/app/shared/shared-imports.ts",
+    "key": "app.shared.shared-imports.primeng_table",
+    "text": "primeng/table"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.angular_common_http",
+    "text": "@angular/common/http"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.angular_core",
+    "text": "@angular/core"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.jsverse_transloco",
+    "text": "@jsverse/transloco"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.rxjs",
+    "text": "rxjs"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.environments_environment",
+    "text": "../environments/environment"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.root",
+    "text": "root"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.en",
+    "text": "en"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.hu",
+    "text": "hu"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.de",
+    "text": "de"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.es",
+    "text": "es"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.fr",
+    "text": "fr"
+  },
+  {
+    "file": "src/app/transloco.config.ts",
+    "key": "app.transloco.config.ru",
+    "text": "ru"
+  }
+]
