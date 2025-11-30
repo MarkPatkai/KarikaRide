@@ -9,4 +9,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, CardModule, TranslocoModule],
   templateUrl: './dashboard.page.html'
 })
-export class DashboardPage {}
+export class DashboardPage {
+  stats = [
+    { label: "Today's Rentals", value: 18 },
+    { label: 'Bicycles Available', value: 42 },
+    { label: 'Services Booked', value: 7 },
+    { label: 'Overdue Returns', value: 3 }
+  ];
+}

@@ -1,4 +1,11 @@
-<p-card>
-  <ng-template pTemplate="title">{{ 'admin.dashboard.title' | transloco }}</ng-template>
+<div class="page-header">
+  <h1>{{ 'admin.dashboard.title' | transloco }}</h1>
   <p>{{ 'admin.dashboard.subtitle' | transloco }}</p>
-</p-card>
+</div>
+
+<div class="admin-card-grid section">
+  <p-card *ngFor="let stat of stats">
+    <div class="p-text-bold p-mb-2">{{ stat.label }}</div>
+    <div class="stat-value">{{ stat.value }}</div>
+  </p-card>
+</div>

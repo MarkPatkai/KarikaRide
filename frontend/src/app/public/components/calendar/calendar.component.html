@@ -1,1 +1,23 @@
-<p-calendar selectionMode="range" [showTime]='true' hourFormat="24" (onSelect)="onDatesChange($event)"></p-calendar>
+<p-card>
+  <ng-template pTemplate="title">Select rental period</ng-template>
+  <div class="form-grid">
+    <p-calendar
+      selectionMode="range"
+      [showTime]="true"
+      hourFormat="24"
+      [(ngModel)]="selectedRange"
+      (onSelect)="onDatesChange($event)"
+    ></p-calendar>
+    <div class="p-d-flex p-jc-between p-ai-center">
+      <small>Choose start and end date with time.</small>
+      <button
+        pButton
+        type="button"
+        class="p-button-primary"
+        label="Confirm Dates"
+        (click)="confirmRange()"
+        [disabled]="!isRangeComplete"
+      ></button>
+    </div>
+  </div>
+</p-card>

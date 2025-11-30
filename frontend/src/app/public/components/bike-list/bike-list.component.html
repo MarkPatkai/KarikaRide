@@ -1,7 +1,15 @@
-<div class="card-grid">
-  <p-card *ngFor="let bike of bicycles" (click)="selectBike.emit(bike)" styleClass="p-3">
-    <ng-template pTemplate="title">{{ bike.name }}</ng-template>
-    <ng-template pTemplate="subtitle">{{ bike.size }} • {{ bike.recommendedFor }}</ng-template>
+<div class="bike-grid">
+  <p-card *ngFor="let bike of bicycles" styleClass="bike-card">
+    <div class="bike-image">
+      <img *ngIf="bike.imageUrl" [src]="bike.imageUrl" [alt]="bike.name" />
+      <span *ngIf="!bike.imageUrl">{{ 'public.bike.noImage' | transloco }}</span>
+    </div>
+    <h3>{{ bike.name }}</h3>
+    <div class="bike-meta">
+      <div><strong>Size:</strong> {{ bike.size }}</div>
+      <div><strong>{{ 'public.bike.recommended' | transloco }}:</strong> {{ bike.recommendedFor }}</div>
+    </div>
     <p>{{ bike.description }}</p>
+    <button pButton type="button" class="p-button-primary" label="{{ 'public.cta.select' | transloco }}" (click)="selectBike.emit(bike)"></button>
   </p-card>
 </div>
