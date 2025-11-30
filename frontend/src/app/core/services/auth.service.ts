@@ -4,7 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 export interface LoginRequest {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -40,7 +40,7 @@ export class AuthService {
     return new HttpHeaders({ Authorization: `Bearer ${this.token ?? ''}` });
   }
 
-  private setToken(token: string): void {
+  private setToken(token: string): void{
     localStorage.setItem(this.tokenKey, token);
   }
 }

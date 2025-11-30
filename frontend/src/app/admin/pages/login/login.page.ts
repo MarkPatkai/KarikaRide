@@ -14,7 +14,7 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class LoginPage {
   form = {
-    email: '',
+    username: '',
     password: ''
   };
   error = '';
