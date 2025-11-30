@@ -7,11 +7,12 @@ import { MessageModule } from 'primeng/message';
 import { ChipModule } from 'primeng/chip';
 import { Bicycle, Accessory } from '../../../../core/models/entities';
 import { ContactInfo } from '../../../../core/models/rental-stepper';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-step3-select-bikes',
   standalone: true,
-  imports: [CommonModule, RouterModule, CardModule, ButtonModule, MessageModule, ChipModule],
+  imports: [CommonModule, RouterModule, CardModule, ButtonModule, MessageModule, ChipModule, TranslocoModule],
   templateUrl: './step3-select-bikes.component.html',
   styleUrls: ['./step3-select-bikes.component.scss']
 })

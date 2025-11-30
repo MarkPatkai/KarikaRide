@@ -3,11 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, FormsModule, CalendarModule, CardModule],
+  imports: [CommonModule, FormsModule, CalendarModule, CardModule, TranslocoModule],
   templateUrl: './calendar.component.html'
 })
 export class CalendarComponent {

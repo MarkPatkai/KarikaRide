@@ -7,11 +7,12 @@ import { MessageModule } from 'primeng/message';
 import { DividerModule } from 'primeng/divider';
 import { AvailabilitySummary, RentalNeeds } from '../../../../core/models/rental-stepper';
 import { Accessory } from '../../../../core/models/entities';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-step2-select-needs',
   standalone: true,
-  imports: [CommonModule, FormsModule, CardModule, ButtonModule, MessageModule, DividerModule],
+  imports: [CommonModule, FormsModule, CardModule, ButtonModule, MessageModule, DividerModule, TranslocoModule],
   templateUrl: './step2-select-needs.component.html',
   styleUrls: ['./step2-select-needs.component.scss']
 })
@@ -26,6 +27,8 @@ export class Step2SelectNeedsComponent {
   children = 0;
   accessorySelection: Record<number, number> = {};
   error = '';
+
+  constructor(private translocoService: TranslocoService) {}
 
   increment(field: 'men' | 'women' | 'children') {
     if (this.limits && (this as any)[field] >= (this.limits as any)[field]) {
@@ -48,7 +51,7 @@ export class Step2SelectNeedsComponent {
   onNext() {
     this.error = '';
     if (this.men + this.women + this.children <= 0) {
-      this.error = 'Legalább egy kerékpárt válassz ki.';
+      this.error = this.translocoService.translate('public.rental.needs.error');
       return;
     }
     this.next.emit({

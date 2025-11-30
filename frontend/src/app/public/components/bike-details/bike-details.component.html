@@ -1,22 +1,22 @@
 <p-card *ngIf="bicycle" styleClass="booking-card">
   <ng-template pTemplate="title">{{ 'public.booking.title' | transloco }}</ng-template>
-  <p class="p-mb-3">Finalize your booking details and confirm your ride.</p>
+  <p class="p-mb-3">{{ 'public.booking.subtitle' | transloco }}</p>
 
   <div class="p-grid p-formgrid p-mb-3">
     <div class="p-field p-col-12 p-md-6">
-      <label>Bike</label>
+      <label>{{ 'public.booking.bikeLabel' | transloco }}</label>
       <p class="badge info">{{ bicycle.name }} • {{ bicycle.size }}</p>
       <div>{{ category?.name }}</div>
     </div>
     <div class="p-field p-col-12 p-md-6">
-      <label>Dates</label>
+      <label>{{ 'public.booking.datesLabel' | transloco }}</label>
       <div *ngIf="bookingRange; else noDates">
         <strong>{{ bookingRange.from | date: 'medium' }}</strong>
-        <div>to</div>
+        <div>{{ 'public.booking.dateSeparator' | transloco }}</div>
         <strong>{{ bookingRange.to | date: 'medium' }}</strong>
       </div>
       <ng-template #noDates>
-        <span class="badge warning">Please select a rental period</span>
+        <span class="badge warning">{{ 'public.booking.missingDates' | transloco }}</span>
       </ng-template>
     </div>
   </div>
@@ -24,15 +24,15 @@
   <div class="p-fluid p-formgrid p-grid">
     <div class="p-field p-col-12 p-md-4">
       <label>{{ 'public.renter.name' | transloco }}</label>
-      <input pInputText [(ngModel)]="renter.name" placeholder="Jane Rider" />
+      <input pInputText [(ngModel)]="renter.name" [placeholder]="'public.booking.namePlaceholder' | transloco" />
     </div>
     <div class="p-field p-col-12 p-md-4">
       <label>{{ 'public.renter.phone' | transloco }}</label>
-      <input pInputText [(ngModel)]="renter.phone" placeholder="+36 30 123 4567" />
+      <input pInputText [(ngModel)]="renter.phone" [placeholder]="'public.booking.phonePlaceholder' | transloco" />
     </div>
     <div class="p-field p-col-12 p-md-4">
       <label>{{ 'public.renter.email' | transloco }}</label>
-      <input pInputText [(ngModel)]="renter.email" placeholder="Optional" />
+      <input pInputText [(ngModel)]="renter.email" [placeholder]="'public.booking.emailPlaceholder' | transloco" />
     </div>
   </div>
 

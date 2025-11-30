@@ -1,12 +1,17 @@
 <div class="page-header">
-  <h1>Contact</h1>
-  <p>Reach our team for rentals, service, or general questions.</p>
+  <h1>{{ 'public.contact.title' | transloco }}</h1>
+  <p>{{ 'public.contact.subtitle' | transloco }}</p>
 </div>
 
 <p-card>
-  <ng-template pTemplate="title">We'd love to hear from you</ng-template>
-  <p>Email: hello&#64;karikaride.com</p>
-  <p>Phone: +36 30 123 4567</p>
-  <p>Address: 1031 Budapest, Bike Lane 12.</p>
-  <button pButton type="button" class="p-button-secondary" label="Send an email"></button>
+  <ng-template pTemplate="title">{{ 'public.contact.cardTitle' | transloco }}</ng-template>
+  <p>{{ 'public.contact.email' | transloco }}: hello&#64;karikaride.com</p>
+  <p>{{ 'public.contact.phone' | transloco }}: +36 30 123 4567</p>
+  <p>{{ 'public.contact.address' | transloco }}: 1031 Budapest, Bike Lane 12.</p>
+  <button
+    pButton
+    type="button"
+    class="p-button-secondary"
+    label="{{ 'public.contact.cta' | transloco }}"
+  ></button>
 </p-card>
