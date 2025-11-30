@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Bicycle } from '../../core/models/entities';
+import { Accessory, Bicycle } from '../../core/models/entities';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -14,5 +14,9 @@ export class BicycleService {
       params = params.set('categoryId', categoryId);
     }
     return this.http.get<Bicycle[]>(`${environment.apiBaseUrl}/public/bicycles`, { params });
+  }
+
+  listAccessories(): Observable<Accessory[]> {
+    return this.http.get<Accessory[]>(`${environment.apiBaseUrl}/public/accessories`);
   }
 }

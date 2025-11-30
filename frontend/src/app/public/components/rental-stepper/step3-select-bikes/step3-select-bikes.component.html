@@ -1,0 +1,116 @@
+<p-card *ngIf="!error; else errorBlock">
+  <ng-template pTemplate="header">
+    <div class="card-header">
+      <h2>Válaszd ki a konkrét bicikliket</h2>
+      <p>Maximum annyit jelölhetsz ki, amennyit az előző lépésben megadtál.</p>
+    </div>
+  </ng-template>
+
+  <div class="grid" *ngIf="needs">
+    <div class="grid-column">
+      <div class="column-header">
+        <h3>Férfi kerékpárok</h3>
+        <span class="badge">{{ selectedMen.size }}/{{ needs.men }}</span>
+      </div>
+      <div class="card" *ngFor="let bike of men">
+        <div class="card-body" [class.selected]="selectedMen.has(bike.id)">
+          <div class="info">
+            <div class="title">{{ bike.name }}</div>
+            <div class="subtitle">Méret: {{ bike.size }}</div>
+          </div>
+          <button
+            pButton
+            [label]="selectedMen.has(bike.id) ? 'Kiválasztva' : 'Kiválasztás'"
+            (click)="toggleSelection('men', bike.id)"
+            [disabled]="!selectedMen.has(bike.id) && selectedMen.size >= needs.men"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-column">
+      <div class="column-header">
+        <h3>Női kerékpárok</h3>
+        <span class="badge">{{ selectedWomen.size }}/{{ needs.women }}</span>
+      </div>
+      <div class="card" *ngFor="let bike of women">
+        <div class="card-body" [class.selected]="selectedWomen.has(bike.id)">
+          <div class="info">
+            <div class="title">{{ bike.name }}</div>
+            <div class="subtitle">Méret: {{ bike.size }}</div>
+          </div>
+          <button
+            pButton
+            [label]="selectedWomen.has(bike.id) ? 'Kiválasztva' : 'Kiválasztás'"
+            (click)="toggleSelection('women', bike.id)"
+            [disabled]="!selectedWomen.has(bike.id) && selectedWomen.size >= needs.women"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-column">
+      <div class="column-header">
+        <h3>Gyermek kerékpárok</h3>
+        <span class="badge">{{ selectedChildren.size }}/{{ needs.children }}</span>
+      </div>
+      <div class="card" *ngFor="let bike of children">
+        <div class="card-body" [class.selected]="selectedChildren.has(bike.id)">
+          <div class="info">
+            <div class="title">{{ bike.name }}</div>
+            <div class="subtitle">Méret: {{ bike.size }}</div>
+          </div>
+          <button
+            pButton
+            [label]="selectedChildren.has(bike.id) ? 'Kiválasztva' : 'Kiválasztás'"
+            (click)="toggleSelection('children', bike.id)"
+            [disabled]="!selectedChildren.has(bike.id) && selectedChildren.size >= needs.children"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accessory-section" *ngIf="accessories.length && needs">
+    <div class="column-header">
+      <h3>Kiegészítők</h3>
+      <span class="badge">{{ selectedAccessories.size }}</span>
+    </div>
+    <div class="chips">
+      <p-chip
+        *ngFor="let accessory of accessories"
+        [label]="accessory.name"
+        [removable]="selectedAccessories.has(accessory.id)"
+        (onRemove)="toggleAccessory(accessory.id, needs.accessories[accessory.id] || 0)"
+        (click)="toggleAccessory(accessory.id, needs.accessories[accessory.id] || 0)"
+        [ngClass]="{ selected: selectedAccessories.has(accessory.id) }"
+      ></p-chip>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button pButton label="Vissza" class="p-button-text" icon="pi pi-arrow-left" (click)="back.emit()"></button>
+    <button pButton label="Foglalás" icon="pi pi-check" (click)="onConfirm()"></button>
+  </div>
+</p-card>
+
+<ng-template #errorBlock>
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="card-header">
+        <h2>Sajnos nincs elérhető bringa erre az időpontra!</h2>
+      </div>
+    </ng-template>
+
+    <p class="error-text">{{ error }}</p>
+    <p *ngIf="contactInfo">
+      Kérünk, vedd fel velünk a kapcsolatot.<br />
+      Email: {{ contactInfo.email }}<br />
+      Telefon: {{ contactInfo.phone }}
+    </p>
+
+    <div class="actions">
+      <button pButton label="Vissza a kezdőlapra" icon="pi pi-home" routerLink="/"></button>
+    </div>
+  </p-card>
+</ng-template>

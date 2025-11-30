@@ -7,6 +7,7 @@ export interface Bicycle {
   recommendedFor: string;
   size: string;
   imageUrl: string;
+  riderType?: 'men' | 'women' | 'children';
   status: 'active' | 'inactive';
 }
 

@@ -29,6 +29,7 @@ import {
   upsertOpeningHour,
   upsertServiceCapacity
 } from '../repositories/serviceRepository.js';
+import { getContactInfo, saveContactInfo } from '../repositories/settingsRepository.js';
 
 const router = Router();
 
@@ -93,7 +94,7 @@ router.get('/bicycles', async (req, res) => {
 });
 
 router.post('/bicycles', async (req, res) => {
-  const { category_id, template_id, name, description, recommended_for, size, image_url, status } = req.body;
+  const { category_id, template_id, name, description, recommended_for, size, image_url, status, rider_type } = req.body;
   if (!category_id || !name || !recommended_for || !size || !image_url) {
     return res.status(400).json({ message: 'category_id, name, recommended_for, size, image_url are required' });
   }
@@ -105,6 +106,7 @@ router.post('/bicycles', async (req, res) => {
     recommended_for,
     size,
     image_url,
+    rider_type: (rider_type as any) || 'men',
     status: status || 'active'
   });
   res.status(201).json({ id });
@@ -194,6 +196,20 @@ router.put('/rental/:id/status', async (req, res) => {
   }
   await updateRentalStatus(Number(req.params.id), status);
   res.status(204).send();
+});
+
+router.get('/settings/contact-info', async (_req, res) => {
+  const contact = await getContactInfo();
+  res.json(contact);
+});
+
+router.post('/settings/contact-info', async (req, res) => {
+  const { email, phone } = req.body;
+  if (!email || !phone) {
+    return res.status(400).json({ message: 'email and phone are required' });
+  }
+  const id = await saveContactInfo(String(email), String(phone));
+  res.status(201).json({ id });
 });
 
 export default router;

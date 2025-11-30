@@ -1,0 +1,25 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="card-header">
+      <h2>Válassz időpontot / Choose your rental time</h2>
+      <p>Állítsd be a kezdő és záró időpontokat a foglaláshoz.</p>
+    </div>
+  </ng-template>
+
+  <div class="calendar-wrapper">
+    <p-calendar
+      [(ngModel)]="range"
+      selectionMode="range"
+      [showTime]="true"
+      hourFormat="24"
+      dateFormat="yy-mm-dd"
+      [inline]="true"
+    ></p-calendar>
+  </div>
+
+  <p-message *ngIf="error" severity="error" [text]="error"></p-message>
+
+  <div class="actions">
+    <button pButton label="Tovább" icon="pi pi-arrow-right" (click)="onNext()"></button>
+  </div>
+</p-card>

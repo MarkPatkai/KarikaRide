@@ -1,44 +1,31 @@
 <div class="page-header">
   <h1>{{ 'public.nav.rent' | transloco }}</h1>
-  <p>Select a category, choose your dates, and pick the perfect ride.</p>
+  <p>Három lépésben foglalhatsz kerékpárt.</p>
 </div>
 
-<p-card class="section">
-  <ng-template pTemplate="title">Find your ride</ng-template>
-  <div class="p-grid p-formgrid">
-    <div class="p-field p-col-12">
-      <label>{{ 'public.filters.category' | transloco }}</label>
-      <div class="chip-row">
-        <p-chip
-          *ngFor="let category of categories"
-          [label]="category.name"
-          class="category-chip"
-          [ngClass]="{ active: category.id === selectedCategory?.id }"
-          (click)="setCategory(category)"
-        ></p-chip>
-      </div>
-    </div>
-    <div class="p-field p-col-12">
-      <label>{{ 'public.filters.dates' | transloco }}</label>
-      <app-calendar (dateRangeSelected)="onDateRangeSelected($event)"></app-calendar>
-    </div>
-  </div>
-</p-card>
+<p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
 
-<section class="section">
-  <div class="p-d-flex p-ai-center p-jc-between p-mb-2">
-    <h2>Bikes available</h2>
-    <div class="badge info">{{ bicycles.length }} options</div>
-  </div>
-  <app-bike-list [bicycles]="bicycles" (selectBike)="onSelectBike($event)"></app-bike-list>
-</section>
+<div [ngSwitch]="activeIndex" class="steps-container">
+  <app-step1-select-date *ngSwitchCase="0" (next)="onSelectDate($event)"></app-step1-select-date>
 
-<section class="section">
-  <app-bike-details
-    [bicycle]="selectedBike"
-    [category]="selectedCategory"
-    [bookingRange]="bookingRange"
-    (createRental)="onCreateRental($event)"
-  ></app-bike-details>
-  <p *ngIf="statusMessage" class="p-mt-2 badge success">{{ statusMessage }}</p>
-</section>
+  <app-step2-select-needs
+    *ngSwitchCase="1"
+    [limits]="summary"
+    [accessories]="accessories"
+    (back)="goBack(0)"
+    (next)="onSelectNeeds($event)"
+  ></app-step2-select-needs>
+
+  <app-step3-select-bikes
+    *ngSwitchCase="2"
+    [men]="availability?.men || []"
+    [women]="availability?.women || []"
+    [children]="availability?.children || []"
+    [accessories]="availability?.accessories || []"
+    [needs]="availability ? state.step2 : null"
+    [contactInfo]="contactInfo"
+    [error]="errorMessage"
+    (back)="goBack(1)"
+    (confirm)="onConfirmSelection($event)"
+  ></app-step3-select-bikes>
+</div>

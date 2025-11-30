@@ -1,0 +1,81 @@
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.grid-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.card-body.selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb inset;
+}
+
+.info .title {
+  font-weight: 700;
+}
+
+.info .subtitle {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.accessory-section {
+  margin-top: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips .selected {
+  background: #2563eb;
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.error-text {
+  margin-bottom: 0.5rem;
+  color: #b91c1c;
+}

@@ -1,16 +1,24 @@
 import { Router } from 'express';
 import {
   listBicycles,
-  listCategories
+  listCategories,
+  listAccessories
 } from '../repositories/catalogRepository.js';
 import { createRental, hasOverlap } from '../repositories/rentalRepository.js';
 import { createServiceBooking, remainingServiceCapacity } from '../repositories/serviceRepository.js';
+import { availabilityList, availabilitySummary } from '../repositories/availabilityRepository.js';
+import { getContactInfo } from '../repositories/settingsRepository.js';
 
 const router = Router();
 
 router.get('/categories', async (_req, res) => {
   const categories = await listCategories();
   res.json(categories);
+});
+
+router.get('/accessories', async (_req, res) => {
+  const accessories = await listAccessories();
+  res.json(accessories);
 });
 
 router.get('/bicycles', async (req, res) => {
@@ -35,6 +43,49 @@ router.get('/availability', async (req, res) => {
     }
   }
   res.json(available);
+});
+
+router.post('/availability/summary', async (req, res) => {
+  const { from, to } = req.body;
+  if (!from || !to) {
+    return res.status(400).json({ message: 'from and to are required ISO strings' });
+  }
+  const summary = await availabilitySummary(String(from), String(to));
+  res.json(summary);
+});
+
+router.post('/availability/list', async (req, res) => {
+  const { from, to, needs } = req.body;
+  if (!from || !to || !needs) {
+    return res.status(400).json({ message: 'from, to, and needs are required' });
+  }
+
+  try {
+    const result = await availabilityList({
+      from: String(from),
+      to: String(to),
+      needs: {
+        men: Number(needs.men) || 0,
+        women: Number(needs.women) || 0,
+        children: Number(needs.children) || 0,
+        accessories: needs.accessories || {}
+      }
+    });
+    res.json(result);
+  } catch (error) {
+    if (error instanceof Error && error.message === 'not enough bikes') {
+      return res.status(409).json({ error: 'not enough bikes' });
+    }
+    throw error;
+  }
+});
+
+router.get('/contact-info', async (_req, res) => {
+  const contact = await getContactInfo();
+  if (!contact) {
+    return res.status(404).json({ message: 'Contact info not configured' });
+  }
+  res.json(contact);
 });
 
 router.post('/rental', async (req, res) => {
