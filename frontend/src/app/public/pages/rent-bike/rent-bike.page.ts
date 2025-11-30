@@ -30,7 +30,8 @@ import {
     TranslocoModule,
     Step1SelectDateComponent,
     Step2SelectNeedsComponent,
-    Step3SelectBikesComponent
+    Step3SelectBikesComponent,
+    CardModule
   ],
   templateUrl: './rent-bike.page.html'
 })
