@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TRANSLOCO_CONFIG, TRANSLOCO_LOADER, TranslocoConfig, TranslocoLoader } from '@jsverse/transloco';
+import { makeEnvironmentProviders } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
@@ -13,7 +14,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   }
 }
 
-export const TRANSLOCO_PROVIDERS = [
+export const TRANSLOCO_PROVIDERS = makeEnvironmentProviders([
   {
     provide: TRANSLOCO_CONFIG,
     useValue: {
@@ -24,4 +25,4 @@ export const TRANSLOCO_PROVIDERS = [
     } as TranslocoConfig
   },
   { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader }
-];
+]);
