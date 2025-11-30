@@ -1,53 +1,55 @@
 <p-card>
   <ng-template pTemplate="header">
     <div class="card-header">
-      <h2 style="color: white">Válaszd ki, mire van szükséged</h2>
-      <p>Állítsd be a biciklik és kiegészítők számát.</p>
+      <h2 style="color: white">{{ 'public.rental.needs.title' | transloco }}</h2>
+      <p>{{ 'public.rental.needs.subtitle' | transloco }}</p>
     </div>
   </ng-template>
 
   <div class="counter-grid">
     <div class="counter">
-      <div class="label">Férfi kerékpár</div>
+      <div class="label">{{ 'public.rental.needs.men' | transloco }}</div>
       <div class="controls">
         <button pButton icon="pi pi-minus" (click)="decrement('men')"></button>
         <span>{{ men }}</span>
         <button pButton icon="pi pi-plus" (click)="increment('men')"></button>
       </div>
-      <small *ngIf="limits">Elérhető: {{ limits.men }}</small>
+      <small *ngIf="limits">{{ 'public.rental.needs.available' | transloco }}: {{ limits.men }}</small>
     </div>
 
     <div class="counter">
-      <div class="label">Női kerékpár</div>
+      <div class="label">{{ 'public.rental.needs.women' | transloco }}</div>
       <div class="controls">
         <button pButton icon="pi pi-minus" (click)="decrement('women')"></button>
         <span>{{ women }}</span>
         <button pButton icon="pi pi-plus" (click)="increment('women')"></button>
       </div>
-      <small *ngIf="limits">Elérhető: {{ limits.women }}</small>
+      <small *ngIf="limits">{{ 'public.rental.needs.available' | transloco }}: {{ limits.women }}</small>
     </div>
 
     <div class="counter">
-      <div class="label">Gyermek kerékpár</div>
+      <div class="label">{{ 'public.rental.needs.children' | transloco }}</div>
       <div class="controls">
         <button pButton icon="pi pi-minus" (click)="decrement('children')"></button>
         <span>{{ children }}</span>
         <button pButton icon="pi pi-plus" (click)="increment('children')"></button>
       </div>
-      <small *ngIf="limits">Elérhető: {{ limits.children }}</small>
+      <small *ngIf="limits">{{ 'public.rental.needs.available' | transloco }}: {{ limits.children }}</small>
     </div>
   </div>
 
   <p-divider></p-divider>
 
   <div class="accessories" *ngIf="accessories.length">
-    <h3>Kiegészítők (opcionális)</h3>
+    <h3>{{ 'public.rental.needs.accessoriesTitle' | transloco }}</h3>
     <div class="accessory" *ngFor="let accessory of accessories">
       <div class="details">
         <img [src]="accessory.imageUrl" [alt]="accessory.name" />
         <div>
           <div class="name">{{ accessory.name }}</div>
-          <div class="available">Elérhető: {{ limits?.accessories[accessory.id] ?? 0 }}</div>
+          <div class="available">
+            {{ 'public.rental.needs.available' | transloco }}: {{ limits?.accessories[accessory.id] ?? 0 }}
+          </div>
         </div>
       </div>
       <div class="controls">
@@ -61,7 +63,7 @@
   <p-message *ngIf="error" severity="warn" [text]="error"></p-message>
 
   <div class="actions">
-    <button pButton label="Vissza" class="p-button-text" icon="pi pi-arrow-left" (click)="back.emit()"></button>
-    <button pButton label="Tovább" icon="pi pi-arrow-right" (click)="onNext()"></button>
+    <button pButton [label]="'shared.back' | transloco" class="p-button-text" icon="pi pi-arrow-left" (click)="back.emit()"></button>
+    <button pButton [label]="'shared.continue' | transloco" icon="pi pi-arrow-right" (click)="onNext()"></button>
   </div>
 </p-card>

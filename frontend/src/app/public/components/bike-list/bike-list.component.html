@@ -6,7 +6,7 @@
     </div>
     <h3>{{ bike.name }}</h3>
     <div class="bike-meta">
-      <div><strong>Size:</strong> {{ bike.size }}</div>
+      <div><strong>{{ 'public.bike.size' | transloco }}:</strong> {{ bike.size }}</div>
       <div><strong>{{ 'public.bike.recommended' | transloco }}:</strong> {{ bike.recommendedFor }}</div>
     </div>
     <p>{{ bike.description }}</p>

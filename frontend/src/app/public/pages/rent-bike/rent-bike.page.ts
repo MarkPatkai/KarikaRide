@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepsModule } from 'primeng/steps';
 import { MessageModule } from 'primeng/message';
@@ -19,6 +19,8 @@ import {
   RentalNeeds,
   RentalStepperState
 } from '../../../core/models/rental-stepper';
+import { TranslocoService } from '@jsverse/transloco';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-rent-bike',
@@ -36,12 +38,12 @@ import {
   ],
   templateUrl: './rent-bike.page.html'
 })
-export class RentBikePage implements OnInit {
+export class RentBikePage implements OnInit, OnDestroy {
   activeIndex = 0;
   items = [
-    { label: 'Időpont' },
-    { label: 'Szükségletek' },
-    { label: 'Biciklik' }
+    { label: '' },
+    { label: '' },
+    { label: '' }
   ];
 
   accessories: Accessory[] = [];
@@ -49,6 +51,7 @@ export class RentBikePage implements OnInit {
   availability: AvailabilityListResponse<Bicycle, Accessory> | null = null;
   contactInfo: ContactInfo | null = null;
   errorMessage = '';
+  langChangeSub?: Subscription;
 
   state: RentalStepperState = {
     step1: { startDate: null, endDate: null, multiDay: false, arrivalTime: null },
@@ -59,12 +62,27 @@ export class RentBikePage implements OnInit {
   constructor(
     private availabilityService: AvailabilityService,
     private bicycleService: BicycleService,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private translocoService: TranslocoService
   ) {}
 
   ngOnInit(): void {
+    this.loadStepLabels();
+    this.langChangeSub = this.translocoService.langChanges$.subscribe(() => this.loadStepLabels());
     this.bicycleService.listAccessories().subscribe(data => (this.accessories = data));
     this.contactService.getContactInfo().subscribe(info => (this.contactInfo = info));
+  }
+
+  ngOnDestroy(): void {
+    this.langChangeSub?.unsubscribe();
+  }
+
+  loadStepLabels() {
+    this.items = [
+      { label: this.translocoService.translate('public.rental.steps.date') },
+      { label: this.translocoService.translate('public.rental.steps.needs') },
+      { label: this.translocoService.translate('public.rental.steps.bikes') }
+    ];
   }
 
   onSelectDate(range: RentalDateData) {
@@ -94,7 +112,7 @@ export class RentBikePage implements OnInit {
         },
         error: err => {
           if (err.status === 409 && err.error?.error === 'not enough bikes') {
-            this.errorMessage = 'Sajnos nincs elérhető bringa erre az időpontra!';
+            this.errorMessage = this.translocoService.translate('public.rental.errors.noAvailability');
             this.activeIndex = 2;
           }
         }

@@ -4,6 +4,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ServiceBookingService } from '../../services/service-booking.service';
+import { TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-service-booking',
@@ -21,7 +22,7 @@ export class ServiceBookingPage {
   capacityInfo?: { remaining: number; capacity: number };
   message = '';
 
-  constructor(private serviceBooking: ServiceBookingService) {}
+  constructor(private serviceBooking: ServiceBookingService, private translocoService: TranslocoService) {}
 
   onDateChange(date: Date) {
     if (!date) return;
@@ -39,6 +40,6 @@ export class ServiceBookingPage {
         userPhone: this.form.phone,
         description: this.form.description
       })
-      .subscribe(() => (this.message = 'Service booking submitted'));
+      .subscribe(() => (this.message = this.translocoService.translate('public.serviceBooking.success')));
   }
 }

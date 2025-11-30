@@ -1,5 +1,5 @@
 <p-card>
-  <ng-template pTemplate="title">Select rental period</ng-template>
+  <ng-template pTemplate="title">{{ 'public.calendar.title' | transloco }}</ng-template>
   <div class="form-grid">
     <p-calendar
       selectionMode="range"
@@ -9,12 +9,12 @@
       (onSelect)="onDatesChange($event)"
     ></p-calendar>
     <div class="p-d-flex p-jc-between p-ai-center">
-      <small>Choose start and end date with time.</small>
+      <small>{{ 'public.calendar.instructions' | transloco }}</small>
       <button
         pButton
         type="button"
         class="p-button-primary"
-        label="Confirm Dates"
+        label="{{ 'public.calendar.confirm' | transloco }}"
         (click)="confirmRange()"
         [disabled]="!isRangeComplete"
       ></button>

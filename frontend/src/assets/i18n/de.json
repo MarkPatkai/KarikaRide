@@ -1,13 +1,23 @@
 {
   "shared": {
     "title": "KarikaRide",
-    "continue": "Weiter"
+    "continue": "Weiter",
+    "back": "Back"
   },
   "public": {
     "nav": {
       "rent": "Rent a bike",
       "service": "Service booking",
-      "contact": ""
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Reach our team for rentals, service, or general questions.",
+      "cardTitle": "We'd love to hear from you",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "cta": "Send an email"
     },
     "filters": {
       "category": "Category",
@@ -22,11 +32,71 @@
       "book": "Book rental",
       "submit": "Submit request"
     },
+    "bike": {
+      "size": "Size",
+      "recommended": "Recommended for",
+      "noImage": "No image available"
+    },
     "serviceBooking": {
       "title": "Workshop booking",
+      "subtitle": "Schedule workshop support in two quick steps.",
       "date": "Preferred date",
       "description": "Issue description",
-      "remaining": "Remaining slots"
+      "descriptionPlaceholder": "What do you need help with?",
+      "remaining": "Remaining slots",
+      "step1Title": "Step 1: Select Date",
+      "step2Title": "Step 2: Your Info",
+      "fullNamePlaceholder": "Full name",
+      "success": "Service booking submitted"
+    },
+    "booking": {
+      "title": "Confirm your booking",
+      "subtitle": "Finalize your booking details and confirm your ride.",
+      "bikeLabel": "Bike",
+      "datesLabel": "Dates",
+      "dateSeparator": "to",
+      "missingDates": "Please select a rental period",
+      "namePlaceholder": "Jane Rider",
+      "phonePlaceholder": "+36 30 123 4567",
+      "emailPlaceholder": "Optional"
+    },
+    "rental": {
+      "subtitle": "Reserve a bike in three easy steps.",
+      "steps": {
+        "date": "Date",
+        "needs": "Needs",
+        "bikes": "Bikes"
+      },
+      "errors": {
+        "noAvailability": "No bikes are available for this time.",
+        "contactPrompt": "Please reach out to us.",
+        "home": "Back to home"
+      },
+      "needs": {
+        "title": "Choose what you need",
+        "subtitle": "Set the number of bikes and accessories.",
+        "men": "Men's bike",
+        "women": "Women's bike",
+        "children": "Children's bike",
+        "available": "Available",
+        "accessoriesTitle": "Accessories (optional)",
+        "error": "Please select at least one bike."
+      },
+      "bikes": {
+        "title": "Pick the specific bikes",
+        "subtitle": "You can select up to the amounts from the previous step.",
+        "men": "Men's bikes",
+        "women": "Women's bikes",
+        "children": "Children's bikes",
+        "selected": "Selected",
+        "select": "Select",
+        "accessories": "Accessories"
+      }
+    },
+    "calendar": {
+      "title": "Select rental period",
+      "instructions": "Choose start and end date with time.",
+      "confirm": "Confirm Dates"
     }
   },
   "admin": {

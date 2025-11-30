@@ -1,32 +1,102 @@
 {
   "shared": {
     "title": "KarikaRide",
-    "continue": "Tovább"
+    "continue": "Tovább",
+    "back": "Vissza"
   },
   "public": {
     "nav": {
-      "rent": "Rent a bike",
-      "service": "Service booking",
-      "contact": ""
+      "rent": "Biciklikölcsönzés",
+      "service": "Szerviz foglalás",
+      "contact": "Kapcsolat"
+    },
+    "contact": {
+      "title": "Kapcsolat",
+      "subtitle": "Vedd fel velünk a kapcsolatot bérléssel, szervizzel vagy kérdésekkel kapcsolatban.",
+      "cardTitle": "Örömmel hallunk felőled",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "address": "Cím",
+      "cta": "E-mail küldése"
     },
     "filters": {
-      "category": "Category",
-      "dates": "Rental dates"
+      "category": "Kategória",
+      "dates": "Bérlési időszak"
     },
     "renter": {
-      "name": "Name",
-      "phone": "Phone",
-      "email": "Email"
+      "name": "Név",
+      "phone": "Telefonszám",
+      "email": "E-mail"
     },
     "cta": {
-      "book": "Book rental",
-      "submit": "Submit request"
+      "book": "Foglalás",
+      "submit": "Kérés küldése"
+    },
+    "bike": {
+      "size": "Méret",
+      "recommended": "Ajánlott",
+      "noImage": "Nincs elérhető kép"
     },
     "serviceBooking": {
-      "title": "Workshop booking",
-      "date": "Preferred date",
-      "description": "Issue description",
-      "remaining": "Remaining slots"
+      "title": "Szervizfoglalás",
+      "subtitle": "Foglalj szervizidőt két gyors lépésben.",
+      "date": "Előnyben részesített dátum",
+      "description": "Hiba leírása",
+      "descriptionPlaceholder": "Miben kérsz segítséget?",
+      "remaining": "Fennmaradó helyek",
+      "step1Title": "1. lépés: dátum választása",
+      "step2Title": "2. lépés: adataid",
+      "fullNamePlaceholder": "Teljes név",
+      "success": "Szervizfoglalás elküldve"
+    },
+    "booking": {
+      "title": "Foglalási adatok",
+      "subtitle": "Véglegesítsd a foglalást és erősítsd meg a bringádat.",
+      "bikeLabel": "Kerékpár",
+      "datesLabel": "Dátumok",
+      "dateSeparator": "-",
+      "missingDates": "Válassz bérlési időszakot",
+      "namePlaceholder": "Kiss János",
+      "phonePlaceholder": "+36 30 123 4567",
+      "emailPlaceholder": "Nem kötelező"
+    },
+    "rental": {
+      "subtitle": "Három lépésben foglalhatsz kerékpárt.",
+      "steps": {
+        "date": "Időpont",
+        "needs": "Szükségletek",
+        "bikes": "Biciklik"
+      },
+      "errors": {
+        "noAvailability": "Sajnos nincs elérhető bringa erre az időpontra!",
+        "contactPrompt": "Kérünk, vedd fel velünk a kapcsolatot.",
+        "home": "Vissza a kezdőlapra"
+      },
+      "needs": {
+        "title": "Válaszd ki, mire van szükséged",
+        "subtitle": "Állítsd be a biciklik és kiegészítők számát.",
+        "men": "Férfi kerékpár",
+        "women": "Női kerékpár",
+        "children": "Gyermek kerékpár",
+        "available": "Elérhető",
+        "accessoriesTitle": "Kiegészítők (opcionális)",
+        "error": "Legalább egy kerékpárt válassz ki."
+      },
+      "bikes": {
+        "title": "Válaszd ki a konkrét bicikliket",
+        "subtitle": "Maximum annyit jelölhetsz ki, amennyit az előző lépésben megadtál.",
+        "men": "Férfi kerékpárok",
+        "women": "Női kerékpárok",
+        "children": "Gyermek kerékpárok",
+        "selected": "Kiválasztva",
+        "select": "Kiválasztás",
+        "accessories": "Kiegészítők"
+      }
+    },
+    "calendar": {
+      "title": "Bérlési időszak kiválasztása",
+      "instructions": "Válassz kezdő és befejező dátumot időponttal.",
+      "confirm": "Dátumok megerősítése"
     }
   },
   "admin": {

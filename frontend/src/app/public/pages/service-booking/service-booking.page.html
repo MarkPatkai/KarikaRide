@@ -1,11 +1,11 @@
 <div class="page-header">
   <h1>{{ 'public.serviceBooking.title' | transloco }}</h1>
-  <p>Schedule workshop support in two quick steps.</p>
+  <p>{{ 'public.serviceBooking.subtitle' | transloco }}</p>
 </div>
 
 <div class="card-grid">
   <p-card>
-    <ng-template pTemplate="title">Step 1: Select Date</ng-template>
+    <ng-template pTemplate="title">{{ 'public.serviceBooking.step1Title' | transloco }}</ng-template>
     <p-calendar [(ngModel)]="date" (onSelect)="onDateChange($event)"></p-calendar>
     <div *ngIf="capacityInfo" class="p-mt-2 badge info">
       {{ 'public.serviceBooking.remaining' | transloco }}: {{ capacityInfo.remaining }} / {{ capacityInfo.capacity }}
@@ -13,19 +13,28 @@
   </p-card>
 
   <p-card>
-    <ng-template pTemplate="title">Step 2: Your Info</ng-template>
+    <ng-template pTemplate="title">{{ 'public.serviceBooking.step2Title' | transloco }}</ng-template>
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-6">
         <label>{{ 'public.renter.name' | transloco }}</label>
-        <input pInputText [(ngModel)]="form.name" placeholder="Full name" />
+        <input
+          pInputText
+          [(ngModel)]="form.name"
+          [placeholder]="'public.serviceBooking.fullNamePlaceholder' | transloco"
+        />
       </div>
       <div class="p-field p-col-12 p-md-6">
         <label>{{ 'public.renter.phone' | transloco }}</label>
-        <input pInputText [(ngModel)]="form.phone" placeholder="Phone" />
+        <input pInputText [(ngModel)]="form.phone" [placeholder]="'public.renter.phone' | transloco" />
       </div>
       <div class="p-field p-col-12">
         <label>{{ 'public.serviceBooking.description' | transloco }}</label>
-        <textarea pInputTextarea rows="3" [(ngModel)]="form.description" placeholder="What do you need help with?"></textarea>
+        <textarea
+          pInputTextarea
+          rows="3"
+          [(ngModel)]="form.description"
+          [placeholder]="'public.serviceBooking.descriptionPlaceholder' | transloco"
+        ></textarea>
       </div>
     </div>
     <button pButton type="button" label="{{ 'public.cta.submit' | transloco }}" (click)="submit()"></button>
