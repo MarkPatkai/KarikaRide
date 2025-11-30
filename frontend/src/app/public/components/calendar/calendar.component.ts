@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, CalendarModule],
+  imports: [CommonModule, FormsModule, CalendarModule, CardModule],
   templateUrl: './calendar.component.html'
 })
 export class CalendarComponent {
@@ -13,10 +15,20 @@ export class CalendarComponent {
   @Input() toDatetime?: string;
   @Output() dateRangeSelected = new EventEmitter<{ from: string; to: string }>();
 
+  selectedRange: Date[] = [];
+
   onDatesChange(values: any) {
-    const [from, to] = values || [];
-    if (from && to) {
-      this.dateRangeSelected.emit({ from: from.toISOString(), to: to.toISOString() });
-    }
+    this.selectedRange = values || [];
+  }
+
+  confirmRange() {
+    const [from, to] = this.selectedRange || [];
+    if (!from || !to) return;
+    this.dateRangeSelected.emit({ from: from.toISOString(), to: to.toISOString() });
+  }
+
+  get isRangeComplete() {
+    const [from, to] = this.selectedRange || [];
+    return !!from && !!to;
   }
 }

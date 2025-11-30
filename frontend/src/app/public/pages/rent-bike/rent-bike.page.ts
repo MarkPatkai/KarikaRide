@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DropdownModule } from 'primeng/dropdown';
 import { TranslocoModule } from '@jsverse/transloco';
 import { CommonModule } from '@angular/common';
 import { CalendarComponent } from '../../components/calendar/calendar.component';
@@ -10,13 +9,14 @@ import { AvailabilityService } from '../../services/availability.service';
 import { BicycleService } from '../../services/bicycle.service';
 import { CategoryService } from '../../services/category.service';
 import { RentalService } from '../../services/rental.service';
+import { ChipModule } from 'primeng/chip';
 
 @Component({
   selector: 'app-rent-bike',
   standalone: true,
   imports: [
     CommonModule,
-    DropdownModule,
+    ChipModule,
     TranslocoModule,
     CalendarComponent,
     BikeListComponent,
@@ -48,9 +48,9 @@ export class RentBikePage implements OnInit {
     this.bicycleService.list(categoryId).subscribe(bicycles => (this.bicycles = bicycles));
   }
 
-  onCategoryChange(categoryId: number) {
-    this.selectedCategory = this.categories.find(c => c.id === +categoryId);
-    this.loadBicycles(categoryId);
+  setCategory(category?: BicycleCategory) {
+    this.selectedCategory = category;
+    this.loadBicycles(category?.id);
   }
 
   onDateRangeSelected(range: { from: string; to: string }) {

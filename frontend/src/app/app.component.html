@@ -1,12 +1,55 @@
-<div class="app-shell">
-  <header>
-    <h1 class="page-title">{{ 'shared.title' | transloco }}</h1>
-    <nav>
-      <a routerLink="/public" class="app-link">{{ 'public.nav.rent' | transloco }}</a>
-      <a routerLink="/public/service" class="app-link">{{ 'public.nav.service' | transloco }}</a>
-      <a routerLink="/admin" class="app-link">{{ 'admin.nav.dashboard' | transloco }}</a>
-    </nav>
-    <hr />
-  </header>
-  <router-outlet></router-outlet>
+<div class="app-shell" [class.admin-shell]="isAdminRoute">
+  <ng-container *ngIf="!isAdminRoute; else adminLayout">
+    <header class="top-nav">
+      <div class="container top-nav-inner">
+        <div class="brand">
+          <div class="brand-mark">K</div>
+          <div>
+            <div>KarikaRide</div>
+            <small>{{ 'shared.title' | transloco }}</small>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a routerLink="/public" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            {{ 'public.nav.rent' | transloco }}
+          </a>
+          <a routerLink="/public/service" routerLinkActive="active">{{ 'public.nav.service' | transloco }}</a>
+          <a routerLink="/public/contact" routerLinkActive="active">{{ 'public.nav.contact' | transloco }}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-container">
+      <router-outlet></router-outlet>
+    </main>
+  </ng-container>
+
+  <ng-template #adminLayout>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <div>KarikaRide</div>
+            <small>Admin Console</small>
+          </div>
+        </div>
+        <nav class="admin-nav">
+          <a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+          <a routerLink="/admin/bicycles" routerLinkActive="active">Bicycles</a>
+          <a routerLink="/admin/categories" routerLinkActive="active">Categories</a>
+          <a routerLink="/admin/accessories" routerLinkActive="active">Accessories</a>
+          <a routerLink="/admin/rentals" routerLinkActive="active">Rentals Today</a>
+          <a routerLink="/admin/opening-hours" routerLinkActive="active">Opening Hours</a>
+          <a routerLink="/admin/service-capacity" routerLinkActive="active">Service Capacity</a>
+          <a routerLink="/admin/login" class="logout">Logout</a>
+        </nav>
+      </aside>
+      <main class="admin-content">
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </main>
+    </div>
+  </ng-template>
 </div>
