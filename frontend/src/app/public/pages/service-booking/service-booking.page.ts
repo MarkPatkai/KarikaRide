@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
+import { SHARED_IMPORTS } from '../../../shared/shared-imports';
+import { TranslocoModule } from '@jsverse/transloco';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 import { ServiceBookingService } from '../../services/service-booking.service';
 
 @Component({
   selector: 'app-service-booking',
+  standalone: true,
+  imports: [...SHARED_IMPORTS, TranslocoModule, CardModule, ButtonModule],
   templateUrl: './service-booking.page.html'
 })
 export class ServiceBookingPage {
