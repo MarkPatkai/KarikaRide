@@ -6,7 +6,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextarea } from 'primeng/inputtextarea';
 import { TableModule } from 'primeng/table';
 
 export const SHARED_IMPORTS = [
@@ -15,7 +15,7 @@ export const SHARED_IMPORTS = [
   ReactiveFormsModule,
   TranslocoModule,
   InputTextModule,
-  InputTextareaModule,
+  InputTextarea,
   ButtonModule,
   CardModule,
   TableModule,
