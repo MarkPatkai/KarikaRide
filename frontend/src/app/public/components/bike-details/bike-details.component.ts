@@ -1,8 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Bicycle, BicycleCategory, CreateRentalRequest } from '../../../core/models/entities';
+import { SHARED_IMPORTS } from '../../../shared/shared-imports';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-bike-details',
+  standalone: true,
+  imports: [...SHARED_IMPORTS, CardModule, ButtonModule],
   templateUrl: './bike-details.component.html'
 })
 export class BikeDetailsComponent {
